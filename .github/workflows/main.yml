@@ -1,0 +1,13 @@
+on:                       [push]
+
+jobs:
+  build_and_deploy:
+    runs-on:              ubuntu-latest
+    name:                 Build and deploy master
+    steps:
+    - name:               Run the build and deploy action
+      id:                 build_and_deploy
+      uses:               blbecker/hugo-build-rsync-action
+      with:
+        destination-host: example.com
+        destination-path: remote/path
