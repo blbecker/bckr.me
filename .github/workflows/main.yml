@@ -14,5 +14,7 @@ jobs:
       with:
         destination-host: example.com
         destination-path: remote/path
+      env:                # Or as an environment variable
+        super_secret:     ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
 # No op
