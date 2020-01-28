@@ -20,9 +20,9 @@ jobs:
       id:                   build_and_deploy
       uses:                 blbecker/hugo-build-rsync-action@master
       with:
-        destination_host:   corvallis.dreamhost.com
-        destination_path:   ~/bckr.me/
+        destination_host:   ${{ secrets.DeploymentHost }}
+        destination_path:   ~/bckr.me.new/
         deployment_key:     ${{ secrets.DeploymentKey }}
-        deployment_user:    blbecker
+        deployment_user:    ${{ secrets.DeploymentUser }}
 
 # No op 7
