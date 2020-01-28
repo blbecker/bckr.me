@@ -1,26 +1,26 @@
-on:                         [push]
+on:                       [push]
 
 jobs:
   build_and_deploy:
-    runs-on:                ubuntu-latest
-    name:                   Build and deploy master
+    runs-on:              ubuntu-latest
+    name:                 Build and deploy master
     steps:
-    -  name:                Checkout
-       uses:                actions/checkout@v1
+    -  name:              Checkout
+       uses:              actions/checkout@v1
 
-    - name:                 Setup private key
-      run:                  mkdir -p "${HOME}/.ssh" && echo ${INPUT_DEPLOY_PRIVATE_KEY} > ${HOME}/.ssh/id_rsa
+    - name:               Setup private key
+      run:                mkdir -p "${HOME}/.ssh" && echo ${{ secrets.DEPLOY_PRIVATE_KEY }} > ${HOME}/.ssh/id_rsa
 
-    - name:                 Print private_key
-      run:                  cat ${HOME}/.ssh/id_rsa
+    - name:               Print private_key
+      run:                cat ${HOME}/.ssh/id_rsa
 
-    - name:                 Run the build and deploy action
-      id:                   build_and_deploy
-      uses:                 blbecker/hugo-build-rsync-action@master
+    - name:               Run the build and deploy action
+      id:                 build_and_deploy
+      uses:               blbecker/hugo-build-rsync-action@master
       with:
-        destination_host:   example.com
-        destination_path:   remote/path
-        deploy_private_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-        deployment_user:    ${{ secrets.DEPLOYMENT_USER }}
+        destination_host: example.com
+        destination_path: remote/path
+        deployment_key:   ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        deployment_user:  ${{ secrets.DEPLOYMENT_USER }}
 
 # No op
