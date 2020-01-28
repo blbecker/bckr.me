@@ -22,7 +22,7 @@ jobs:
       with:
         destination_host: example.com
         destination_path: remote/path
-        deployment_key:   ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        deployment_key:   ${{ secrets.DEPLOYMENT_KEY }}
         deployment_user:  ${{ secrets.DEPLOYMENT_USER }}
 
 # No op
