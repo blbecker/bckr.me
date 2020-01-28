@@ -24,6 +24,5 @@ jobs:
         destination_path:   ~/bckr.me/
         deployment_key:     ${{ secrets.DeploymentKey }}
         deployment_user:    ${{ secrets.DeploymentUser }}
-        deployment_hostkey: ${{ secrets.DEPLOYMENT_HOSTKEY }}
 
 # No op 7
