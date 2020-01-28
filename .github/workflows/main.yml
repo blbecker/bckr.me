@@ -11,7 +11,7 @@ jobs:
     - name:               Setup private key
       run:                mkdir -p "${HOME}/.ssh" && echo ${PRIV_KEY} > ${HOME}/.ssh/id_rsa
       env:
-        PRIV_KEY:         ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        PRIV_KEY:         ${{ secrets.DEPLOYMENT_KEY }}
 
     - name:               Print private_key
       run:                cat ${HOME}/.ssh/id_rsa
