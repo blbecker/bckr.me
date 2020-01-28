@@ -9,7 +9,9 @@ jobs:
        uses:              actions/checkout@v1
 
     - name:               Setup private key
-      run:                mkdir -p "${HOME}/.ssh" && echo ${{ secrets.DEPLOY_PRIVATE_KEY }} > ${HOME}/.ssh/id_rsa
+      run:                mkdir -p "${HOME}/.ssh" && echo ${PRIV_KEY} > ${HOME}/.ssh/id_rsa
+      env:
+        PRIV_KEY:         ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
     - name:               Print private_key
       run:                cat ${HOME}/.ssh/id_rsa
