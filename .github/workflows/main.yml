@@ -21,7 +21,7 @@ jobs:
       uses:                 blbecker/hugo-build-rsync-action@master
       with:
         destination_host:   ${{ secrets.DeploymentHost }}
-        destination_path:   ~/bckr.me.new/
+        destination_path:   ~/bckr.me/
         deployment_key:     ${{ secrets.DeploymentKey }}
         deployment_user:    ${{ secrets.DeploymentUser }}
 
