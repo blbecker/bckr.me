@@ -22,7 +22,7 @@ jobs:
       with:
         destination_host:   ${{ secrets.DeploymentHost }}
         destination_path:   ~/bckr.me/
-        deployment_key:     ${{ secrets.DEPLOYMENT_KEY }}
+        deployment_key:     ${{ secrets.DeploymentKey }}
         deployment_user:    ${{ secrets.DeploymentUser }}
         deployment_hostkey: ${{ secrets.DEPLOYMENT_HOSTKEY }}
 
