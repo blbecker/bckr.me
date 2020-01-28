@@ -1,28 +1,29 @@
-on:                       [push]
+on:                         [push]
 
 jobs:
   build_and_deploy:
-    runs-on:              ubuntu-latest
-    name:                 Build and deploy master
+    runs-on:                ubuntu-latest
+    name:                   Build and deploy master
     steps:
-    -  name:              Checkout
-       uses:              actions/checkout@v1
+    -  name:                Checkout
+       uses:                actions/checkout@v1
 
-    - name:               Setup private key
-      run:                mkdir -p "${HOME}/.ssh" && echo "${PRIV_KEY}" > ${HOME}/.ssh/id_rsa
+    - name:                 Setup private key
+      run:                  mkdir -p "${HOME}/.ssh" && echo "${PRIV_KEY}" > ${HOME}/.ssh/id_rsa
       env:
-        PRIV_KEY:         ${{ secrets.DEPLOYMENT_KEY }}
+        PRIV_KEY:           ${{ secrets.DEPLOYMENT_KEY }}
 
-    - name:               Print private_key
-      run:                cat ${HOME}/.ssh/id_rsa
+    - name:                 Print private_key
+      run:                  cat ${HOME}/.ssh/id_rsa
 
-    - name:               Run the build and deploy action
-      id:                 build_and_deploy
-      uses:               blbecker/hugo-build-rsync-action@master
+    - name:                 Run the build and deploy action
+      id:                   build_and_deploy
+      uses:                 blbecker/hugo-build-rsync-action@master
       with:
-        destination_host: ${{ secrets.DEPLOYMENT_HOST }}
-        destination_path: ~/bckr.me/
-        deployment_key:   ${{ secrets.DEPLOYMENT_KEY }}
-        deployment_user:  ${{ secrets.DEPLOYMENT_USER }}
+        destination_host:   ${{ secrets.DEPLOYMENT_HOST }}
+        destination_path:   ~/bckr.me/
+        deployment_key:     ${{ secrets.DEPLOYMENT_KEY }}
+        deployment_user:    ${{ secrets.DEPLOYMENT_USER }}
+        deployment_hostkey: ${{ secrets.DEPLOYMENT_HOSTKEY }}
 
 # No op
