@@ -9,6 +9,7 @@ tags:
   - deb
 
 ---
+<<<<<<< HEAD
 Recently, at work, I came across a requirement to establish authenticated package repositories (RPM and DEB) for software we distribute. This was a surprisingly non-trivial task. Broadly speaking, there are two ways to pull this off--using HTTP Basic Auth or Client SSL Certs. Which makes sense for you will depend on your goals and environment.
 
 Both RPM and Debian repositories consist, essentially, of a webserver providing structured files at an expected location. Neither format requires (though, software offerings do exist in this area) an application server providing any sort of intelligence to deliver software. If packages are available at the correct paths with the correct metadata in the correct location, you've got a repository server. As a result, the configuration of the server side of both of these authentication mechanisms does not differ from the typical deployment of those mechanism. That is to say, if you can configure an nginx host to use basic auth, then you can configure nginx *serving a package repository* to use basic auth. The configuration of the clients, on the other hand, requires a bit more work.
@@ -22,6 +23,18 @@ Basic Auth specifies the mechanism by which the client presents credentials to t
 
 I'll be using the below htpasswd file generated using the command `htpasswd -B -c repo-users.passwd exampleUser`. This command will prompt for a password, hash that password using `bcrypt` (due to the `-B` flag) and store the results in `./repo-users.passwd`.
 
+=======
+Recently, at work, I came across a requirement to establish authenticated package repositories (RPM and DEB) for software we distribute. This was a surprisingly non-trivial task. Broadly speaking, there are two ways to pull this off--using Basic Auth or Client SSL Certs. Which makes sense for you will depend on your goals and environment.
+
+# Basic Auth
+Documented in ~~[IETF RFC2617](https://tools.ietf.org/html/rfc2617)~~ [IETF RFC 7617](https://tools.ietf.org/html/rfc7617), Basic Auth is, as one might expect, quite simple. Set an HTTP Authorization header with base64 contents, and you're good to go. More importantly, the components of a basic auth request--a username and password--are standard across a variety of authentication and authorization platforms. 
+
+# RPM
+## Basic Auth
+### Configure Server
+### Configure Client
+Entry in `/etc/yum/repos.d/${repoName}.repo` repo file
+>>>>>>> WIP.
 ```
 # ./repo-users.passwd
 
@@ -81,7 +94,11 @@ NameVirtualHost *:80
     </Directory>
 </VirtualHost>
 ```
+## SSL Client Certificates
+### Configure Server
+### Configure Client
 
+<<<<<<< HEAD
 ## Configure Client
 Now that the server has been configured, we must tell the client tools to perform an HTTP Basic Auth as part of the connection to a particular repository. Unlike configuring the server, these configurations will be different for each type of repository.
 ### RPM
@@ -103,6 +120,12 @@ password=${passwordOrAPIToken}
 ### Debian
 Debian uses auth.conf (typically at `/etc/apt/auth.conf`) to associate credentials with a particular repository. The structure of this is somewhat similar to ssh_config. A stanza is opened by specificing the remote host (machine, in auth.conf parlance) to which that configuration applies. Subsequent lines indicate configuration options for that machine until the file ends or another stanza begins.
 
+=======
+# Debian
+## Basic Auth
+### Configure Server
+### Configure Client
+>>>>>>> WIP.
 Entry in `/etc/apt/auth.conf`
 ``` bash
 # /etc/apt/auth.conf
@@ -111,6 +134,7 @@ machine repo.example.com/path/to/repository/root
     login ${username}
     password ${passwordOrAPIToken}
 ```
+<<<<<<< HEAD
 # SSL Client Certificates
 Most system administrators are likely familiar with using x509 certificates to verify the authenticity of webserver. In addition to verifying that a server is who it claims to be, though, these certificates may also be used to authenticate **clients**. Client certificate authentication can be a great option in those environments where strong identity verification is required, where clients may be configured with a certificate, and in which the management of a private CA is feasible (more on this in a later post). If those things are true, client certificates may provide stronger security than most basic authentication mechanisms and, depending on other available, might be more easily automated.
 
@@ -128,3 +152,9 @@ In order to configure client certificate authentication, our webserver must have
 ## Configure Client
 ### RPM
 ### Debian
+=======
+
+## SSL Client Certificates
+### Configure Server
+### Configure Client
+>>>>>>> WIP.
