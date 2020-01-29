@@ -5,27 +5,19 @@ on:
 
 jobs:
   build_and_deploy:
-    runs-on:                ubuntu-latest
-    name:                   Build and deploy master
+    runs-on:              ubuntu-latest
+    name:                 Build and deploy master
     steps:
-    -  name:                Checkout
-       uses:                actions/checkout@v1
+    -  name:              Checkout
+       uses:              actions/checkout@v1
 
-    - name:                 Setup private key
-      run:                  mkdir -p "${HOME}/.ssh" && echo "${PRIV_KEY}" > ${HOME}/.ssh/id_rsa
-      env:
-        PRIV_KEY:           ${{ secrets.DEPLOYMENT_KEY }}
-
-    - name:                 Print private_key
-      run:                  cat ${HOME}/.ssh/id_rsa
-
-    - name:                 Run the build and deploy action
-      id:                   build_and_deploy
-      uses:                 blbecker/hugo-build-rsync-action@master
+    - name:               Run the build and deploy action
+      id:                 build_and_deploy
+      uses:               blbecker/hugo-build-rsync-action@master
       with:
-        destination_host:   ${{ secrets.DeploymentHost }}
-        destination_path:   ~/bckr.me/
-        deployment_key:     ${{ secrets.DeploymentKey }}
-        deployment_user:    ${{ secrets.DeploymentUser }}
+        destination_host: ${{ secrets.DeploymentHost }}
+        destination_path: ~/bckr.me/
+        deployment_key:   ${{ secrets.DeploymentKey }}
+        deployment_user:  ${{ secrets.DeploymentUser }}
 
 # No op 8
