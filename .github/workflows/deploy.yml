@@ -11,13 +11,16 @@ jobs:
     -  name:              Checkout
        uses:              actions/checkout@v1
 
-    - name:               Run the build and deploy action
-      id:                 build_and_deploy
-      uses:               blbecker/hugo-build-rsync-action@master
+    - name:               Run the build action
+      id:                 build
+      uses:               blbecker/hugo-build@master
+
+    - name:               Run the deploy action
+      id:                 deploy
+      uses:               blbecker/rsync-deploy@master
       with:
         destination_host: ${{ secrets.DeploymentHost }}
         destination_path: ~/bckr.me/
         deployment_key:   ${{ secrets.DeploymentKey }}
         deployment_user:  ${{ secrets.DeploymentUser }}
-
-# No op 8
+        source_dir:       public/
