@@ -5,14 +5,14 @@ on:
 
 jobs:
   build:
-    runs-on:              ubuntu-latest
-    name:                 Build branch
+    runs-on:         ubuntu-latest
+    name:            Build branch
     steps:
-      - name:              Checkout
-        uses:              actions/checkout@v1
+      - name:        Checkout
+        uses:        actions/checkout@v1
 
-      - name:               Run the build action
-        id:                 build
-        uses:               blbecker/hugo-build@master
+      - name:        Run the build action
+        id:          build
+        uses:        blbecker/hugo-build@v1.1
         with:
           hugo_args: -D
