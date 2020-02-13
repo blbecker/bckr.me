@@ -22,6 +22,9 @@ disqusShortname = "hugo-tranquilpeak-theme"
 paginate = 7
 canonifyurls = true
 
+pygmentsCodefences = true
+pygmentsStyle = "github"
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
@@ -116,7 +119,7 @@ canonifyurls = true
 
   # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
   # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
+  # syntaxHighlighter = "highlight.js"
 
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = true
@@ -183,6 +186,9 @@ canonifyurls = true
   # they have to be referred from static root. Example
   [[params.customCSS]]
     href = "https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+
+  [[params.customCSS]]
+    href = "css/syntax.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example
