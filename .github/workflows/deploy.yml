@@ -13,11 +13,11 @@ jobs:
 
     - name:               Run the build action
       id:                 build
-      uses:               blbecker/hugo-build@master
+      uses:               blbecker/hugo-build@v1.1
 
     - name:               Run the deploy action
       id:                 deploy
-      uses:               blbecker/rsync-deploy@master
+      uses:               blbecker/rsync-deploy@v1.0
       with:
         destination_host: ${{ secrets.DeploymentHost }}
         destination_path: ~/bckr.me/
