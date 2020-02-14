@@ -1,7 +1,7 @@
 ---
 title: "Authenticated Repositories"
 date: 2020-01-27T17:19:28-05:00
-draft: true
+draft: false
 tags:
   - linux
   - packaging
