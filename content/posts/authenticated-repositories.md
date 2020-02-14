@@ -31,12 +31,17 @@ exampleUser:$2y$05$kXKPC7zN9J32KYLaiNRw9.HyEYT0yJ.zOkfqvwxYfUEuqSEMJxNLS
 We must then configure the webserver to authenticate a resource using this file. Doing so requires ensuring that the htpasswd file is readable by the user running the webserver. Nginx typically runs as the user `nginx` while Apache could be run by either `httpd` or `apache` depending on distribution. In either case, this user may be determined by checking for which user is running the webserver process using `ps`. Once proper ownership and permissions are applied to the htpasswd file, basic auth may be configured by placing the following stanzas in the webserver configuration.
 
 
-``` bash
+#### Configure Nginx
+``` bash {linenos=table,hl_lines=["7-9"]}
 # /etc/nginx/conf.d/repo.conf
 
 server {
     listen       80;
     server_name  repo.example.com;
+
+    # Configure Basic Auth
+    auth_basic           "Restricted Repository Content";
+    auth_basic_user_file /path/to/repo-users.htpasswd;
 
     charset koi8-r;
     access_log  /data/logs/host.access.log  main;
@@ -56,8 +61,8 @@ server {
 }
 ```
 
-<!-- ``` aconf {linenos=table,hl_lines=["16-20"]} -->
-``` aconf
+#### Configure Apache
+``` aconf {linenos=table,hl_lines=["16-20"]}
 # /etc/httpd/site-enabled/repo.conf (depending on distro)
 
 NameVirtualHost *:80
@@ -75,15 +80,12 @@ NameVirtualHost *:80
 
         # Configure Basic Auth
         AuthType Basic
-        AuthName "Restricted Content"
+        AuthName "Restricted Repository Content"
         AuthUserFile /path/to/repo-users.htpasswd
         Require valid-user
     </Directory>
 </VirtualHost>
 ```
-## SSL Client Certificates
-### Configure Server
-### Configure Client
 
 ## Configure Client
 Now that the server has been configured, we must tell the client tools to perform an HTTP Basic Auth as part of the connection to a particular repository. Unlike configuring the server, these configurations will be different for each type of repository.
@@ -91,8 +93,9 @@ Now that the server has been configured, we must tell the client tools to perfor
 RPM clients (including `yum` and `dnf`) expect the configuration of http basic auth credentials to occur in the repo file for the repository. The RPM repo file spec includes username and password directives that may be used for this purpose.
 
 Entry in repo file
-``` bash
-# /etc/yum/repos.d/${repoName}.repo
+``` bash {linenos=table,hl_lines=["10-12"]}
+# /etc/yum/repos.d/example-repo.repo
+
 [example-repo]
 name=example-repo
 baseurl=https://example.repo.com/repo
@@ -100,6 +103,7 @@ gpgcheck=1
 repo_gpgcheck=1
 enabled=1
 
+# Configure Basic Authentication
 username=${username}
 password=${passwordOrAPIToken}
 ```
@@ -107,27 +111,137 @@ password=${passwordOrAPIToken}
 Debian uses auth.conf (typically at `/etc/apt/auth.conf`) to associate credentials with a particular repository. The structure of this is somewhat similar to ssh_config. A stanza is opened by specificing the remote host (machine, in auth.conf parlance) to which that configuration applies. Subsequent lines indicate configuration options for that machine until the file ends or another stanza begins.
 
 Entry in `/etc/apt/auth.conf`
-``` bash
+``` bash {linenos=table,hl_lines=["3-5"]}
 # /etc/apt/auth.conf
 
 machine repo.example.com/path/to/repository/root
     login ${username}
     password ${passwordOrAPIToken}
 ```
+
+``` bash {linenos=table,hl_lines=["5-6"]}
+# /etc/apt/sources.list
+
+...
+
+# Configure repo corresponding to /etc/apt/auth.conf
+deb https://example.repo.com/ ${distro} ${component}
+
+```
 # SSL Client Certificates
+<!-- FixMe: Add Article About Private PKI -->
 Most system administrators are likely familiar with using x509 certificates to verify the authenticity of webserver. In addition to verifying that a server is who it claims to be, though, these certificates may also be used to authenticate **clients**. Client certificate authentication can be a great option in those environments where strong identity verification is required, where clients may be configured with a certificate, and in which the management of a private CA is feasible (more on this in a later post). If those things are true, client certificates may provide stronger security than most basic authentication mechanisms and, depending on other available, might be more easily automated.
 
 ## Configure Server
 In order to configure client certificate authentication, our webserver must have some mechanism for establishing the identity of clients. We do this by trusting a certificate authority (or CA) which issues certificates. If we trust a CA, then we also trust those certificates issued by that authority. This section assumes that a CA already exists which may issue certificates to the clients of this repository server.
 
-``` bash
+#### Nginx
+``` bash {linenos=table,hl_lines=["7-8","10-12"]}
 # /etc/nginx/conf.d/repo.conf
 
+server {
+    listen       80;
+    server_name  repo.example.com;
+
+    ssl_client_certificate /etc/example/ca.pem;
+    ssl_verify_client on;
+
+    # Verification depth is optional.
+    # Only set if you control both ca and clients.
+    # ssl_verify_depth 1;
+
+    charset koi8-r;
+    access_log  /data/logs/host.access.log  main;
+
+    location / {
+        root   /data/www/html;
+        index  index.html index.htm;
+    }
+
+    error_page  404              /404.html;
+
+    location /repo {
+       alias /data/www/html/repo/;
+       autoindex on;
+    }
+
+}
 ```
 
-``` bash
-# /etc/httpd/sites-enabled/repo.conf (depending on distro)
+#### Apache
+``` aconf {linenos=table,hl_lines=[13,"19-21"]}
+# /etc/httpd/site-enabled/repo.conf (depending on distro)
+
+NameVirtualHost *:80
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@repo.example.com
+    ServerName My Repository
+    ServerAlias repo.example.com
+    DocumentRoot /var/www/html
+    ErrorLog /var/log/httpd/error.log
+    CustomLog /var/log/httpd/access.log combined
+
+    SSLCACertificateFile /etc/example/ca.pem
+
+    <Directory "/var/www/html">             
+        AllowOverride All
+        Require all granted                 # required in Apache 2.4
+
+        # Require Client Certificate Auth For the repo Directory
+        SSLOptions +StdEnvVars
+        SSLVerifyClient require
+
+    </Directory>
+</VirtualHost>
+```
 
 ## Configure Client
 ### RPM
+
+Configuration is done in the repo file.
+```bash {linenos=table,hl_lines=["10-13"]}
+# /etc/yum/repos.d/example-repo.repo
+
+[example-repo]
+name=example-repo
+baseurl=https://example.repo.com/repo
+gpgcheck=1
+repo_gpgcheck=1
+enabled=1
+
+# Configure SSL Client Certificate Authentication
+sslverify=1
+sslclientcert=/path/to/client.pem
+sslclientkey=/path/to/client.key
+```
+
 ### Debian
+Configuration is primarily done in the apt.conf.d file which much must correspond to a repo defined in the sources.list file.
+
+``` bash {linenos=table,hl_lines=["9-10","12-13"]}
+# /etc/apt/apt.conf.d/50example-repo
+
+Debug::Acquire::https "true";
+
+Acquire::https::example.repo.com {
+    Verify-Peer "true";
+    Verify-Host "true";
+
+    # Uncomment only if server is using non-standard CA
+    # CaInfo "/opt/CA.crt";
+
+    SslCert "/path/to/client.pem";
+    SslKey  "/path/to/client.key";
+};
+```
+
+``` bash {linenos=table,hl_lines=["5-6"]}
+# /etc/apt/sources.list
+
+    ...
+
+    # Configure repo corresponding to apt.conf.d
+    deb https://example.repo.com/ ${distro} ${component}
+
+```
