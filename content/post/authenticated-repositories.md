@@ -255,3 +255,7 @@ Acquire::https::example.repo.com {
     deb https://example.repo.com/ ${distro} ${component}
 
 ```
+---
+
+#### Attributions
+["Security By Thy Name"](https://www.flickr.com/photos/37996646802@N01/21860953461) by [cogdogblog](https://www.flickr.com/photos/37996646802@N01) is licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=rich)
