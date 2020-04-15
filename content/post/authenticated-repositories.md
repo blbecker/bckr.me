@@ -14,6 +14,7 @@ thumbnailImagePosition: left
 metaAlignment: left
 summary: Authenticated software repositories are a great solution for proprietary distribution, as well as controlling access to dev/beta releases. Native tools support this, but proper implemntations are non-obvious.
 ---
+
 Although RPM and Debian repos are generally intended for distributing software to the public, there are times when a more private approach is desired. Whether for proprietary software or merely keeping "the internet" out of development spaces, let's take a look at how to secure linux package repositories in a way that is transparent to native tools.
 
 Recently, at work, I came across a requirement to establish authenticated package repositories (RPM and DEB) for software we distribute. This was a surprisingly non-trivial task. Broadly speaking, there are two ways to pull this off--using HTTP Basic Auth or Client SSL Certs. Which makes sense for you will depend on your goals and environment.
@@ -21,9 +22,6 @@ Recently, at work, I came across a requirement to establish authenticated packag
 Both RPM and Debian repositories consist, essentially, of a webserver providing structured files at an expected location. Neither format requires (though, software offerings do exist in this area) an application server providing any sort of intelligence to deliver software. If packages are available at the correct paths with the correct metadata in the correct location, you've got a repository server. As a result, the configuration of the server side of both of these authentication mechanisms does not differ from the typical deployment of those mechanism. That is to say, if you can configure an nginx host to use basic auth, then you can configure nginx *serving a package repository* to use basic auth. The configuration of the clients, on the other hand, requires a bit more work.
 
 <!-- toc -->
-
-<!-- # Basic Auth
-Documented in ~~[IETF RFC2617](https://tools.ietf.org/html/rfc2617)~~ [IETF RFC 7617](https://tools.ietf.org/html/rfc7617), Basic Auth is the authentication mechanism with which most users are familiar. Username, password, -->
 
 # Basic Auth
 ## Configure Server
