@@ -7,18 +7,27 @@ tags:
   - packaging
   - rpm
   - deb
-
+categories:
+  - tech
+thumbnailImage: https://farm1.staticflickr.com/629/21860953461_35de6932ce_b.jpg
+thumbnailImagePosition: left
+metaAlignment: left
+summary: Authenticated software repositories are a great solution for proprietary distribution, as well as controlling access to dev/beta releases. Native tools support this, but proper implemntations are non-obvious.
 ---
+Although RPM and Debian repos are generally intended for distributing software to the public, there are times when a more private approach is desired. Whether for proprietary software or merely keeping "the internet" out of development spaces, let's take a look at how to secure linux package repositories in a way that is transparent to native tools.
+
 Recently, at work, I came across a requirement to establish authenticated package repositories (RPM and DEB) for software we distribute. This was a surprisingly non-trivial task. Broadly speaking, there are two ways to pull this off--using HTTP Basic Auth or Client SSL Certs. Which makes sense for you will depend on your goals and environment.
 
 Both RPM and Debian repositories consist, essentially, of a webserver providing structured files at an expected location. Neither format requires (though, software offerings do exist in this area) an application server providing any sort of intelligence to deliver software. If packages are available at the correct paths with the correct metadata in the correct location, you've got a repository server. As a result, the configuration of the server side of both of these authentication mechanisms does not differ from the typical deployment of those mechanism. That is to say, if you can configure an nginx host to use basic auth, then you can configure nginx *serving a package repository* to use basic auth. The configuration of the clients, on the other hand, requires a bit more work.
+
+<!-- toc -->
 
 <!-- # Basic Auth
 Documented in ~~[IETF RFC2617](https://tools.ietf.org/html/rfc2617)~~ [IETF RFC 7617](https://tools.ietf.org/html/rfc7617), Basic Auth is the authentication mechanism with which most users are familiar. Username, password, -->
 
 # Basic Auth
 ## Configure Server
-Basic Auth specifies the mechanism by which the client presents credentials to the webserver. It does not, however, specify what the webserver then does with those credentials. There are a huge number of options for basic auth backends, from simple htpasswd files to more complex systems such as LDAP or any number of proprietary SSO products. For the sake of simiplicity, we'll use htpasswd files here, but a production grade deployment would likely use something more robust.
+[Basic Auth](https://tools.ietf.org/html/rfc7617) specifies the mechanism by which the client presents credentials to the webserver. It does not, however, specify what the webserver then does with those credentials. There are a huge number of options for basic auth backends, from simple htpasswd files to more complex systems such as LDAP or any number of proprietary SSO products. For the sake of simiplicity, we'll use htpasswd files here, but a production grade deployment would likely use something more robust.
 
 I'll be using the below htpasswd file generated using the command `htpasswd -B -c repo-users.passwd exampleUser`. This command will prompt for a password, hash that password using `bcrypt` (due to the `-B` flag) and store the results in `./repo-users.passwd`.
 
@@ -28,7 +37,7 @@ I'll be using the below htpasswd file generated using the command `htpasswd -B -
 exampleUser:$2y$05$kXKPC7zN9J32KYLaiNRw9.HyEYT0yJ.zOkfqvwxYfUEuqSEMJxNLS
 ```
 
-We must then configure the webserver to authenticate a resource using this file. Doing so requires ensuring that the htpasswd file is readable by the user running the webserver. Nginx typically runs as the user `nginx` while Apache could be run by either `httpd` or `apache` depending on distribution. In either case, this user may be determined by checking for which user is running the webserver process using `ps`. Once proper ownership and permissions are applied to the htpasswd file, basic auth may be configured by placing the following stanzas in the webserver configuration.
+We must then configure the webserver to authenticate a resource using this file. Doing so requires ensuring that the htpasswd file is readable by the user running the webserver. Nginx typically runs as the user `nginx`, while Apache could be run by either `httpd` or `apache` depending on distribution. In either case, this user may be determined by checking for which user is running the webserver process using `ps`. Once proper ownership and permissions are applied to the htpasswd file, basic auth may be configured by placing the following stanzas in the webserver configuration.
 
 
 #### Configure Nginx
@@ -62,6 +71,9 @@ server {
 ```
 
 #### Configure Apache
+
+The Apache webserver can be configured similarly using an Auth stanza within the Directory block.
+
 ``` aconf {linenos=table,hl_lines=["16-20"]}
 # /etc/httpd/site-enabled/repo.conf (depending on distro)
 
