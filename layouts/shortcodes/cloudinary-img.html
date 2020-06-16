@@ -1,0 +1,3 @@
+{{ $transformations := .Get "transformations" | default "q_auto,f_auto,h_450" }}
+
+<img class="lazyload" data-src="https://res.cloudinary.com/drzdusujd/image/upload/{{ $transformations }}/v1592228690/bckr.me/{{.Get "img-path"}}" title="{{.Get "title"}}">
