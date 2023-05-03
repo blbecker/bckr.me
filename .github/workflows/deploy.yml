@@ -19,7 +19,7 @@ jobs:
 
     - name:               Run the deploy action
       id:                 deploy
-      uses:               blbecker/rsync-deploy@v1.0
+      uses:               blbecker/rsync-deploy@1.1
       with:
         destination_host: ${{ secrets.DeploymentHost }}
         destination_path: ~/bckr.me/
