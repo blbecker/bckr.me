@@ -13,6 +13,6 @@ jobs:
 
       - name:        Run the build action
         id:          build
-        uses:        blbecker/hugo-build@v1.1
+        uses:        blbecker/hugo-build@v0.111.3 
         with:
           hugo_args: -D
