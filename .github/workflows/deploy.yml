@@ -24,3 +24,5 @@ jobs:
         deployment_key:   ${{ secrets.DeploymentKey }}
         deployment_user:  ${{ secrets.DeploymentUser }}
         source_dir:       public/
+
+# no op
