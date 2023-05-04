@@ -1,5 +1,5 @@
 # bckr.me
 
-![.github/workflows/deploy.yml](https://github.com/blbecker/bckr.me/workflows/.github/workflows/deploy.yml/badge.svg?branch=master)
+[![Build and Deploy to live site](https://github.com/blbecker/bckr.me/actions/workflows/deploy.yml/badge.svg)](https://github.com/blbecker/bckr.me/actions/workflows/deploy.yml)
 
 Source for https://bckr.me
