@@ -16,7 +16,7 @@ enableCodeCopy = false
 
 [header]
   layout = "basic" # valid options: basic, hamburger, hybrid, custom
-  # logo = "img/logo.jpg"
+  logo = "img/logo.png"
   showTitle = true
 
 [footer]
