@@ -11,7 +11,7 @@ categories:
 thumbnailImage: https://farm1.staticflickr.com/629/21860953461_35de6932ce_b.jpg
 thumbnailImagePosition: left
 metaAlignment: left
-summary: Authenticated software repositories are a great solution for proprietary distribution, as well as controlling access to dev/beta releases. Native tools support this, but proper implemntations are non-obvious.
+summary: It's been a long time since this blog was updated. Quick updates and plans for the future!
 ---
 
 # Reintroductions
