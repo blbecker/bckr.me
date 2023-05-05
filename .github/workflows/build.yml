@@ -5,8 +5,15 @@ on:
     branches-ignore:
       - master
       - main
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - 'main'
 
 jobs:
+  spellcheck:
+    uses: austenstone/spellchecker-cli-action-summary/.github/workflows/spellcheck.yml@main
+
   build:
     runs-on:         ubuntu-latest
     name:            Build branch
