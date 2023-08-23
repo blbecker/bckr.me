@@ -42,6 +42,7 @@ dateFormat = "2 January 2006"
   #   { lastfm = "https://lastfm.com/user/username" },
     { linkedin = "https://linkedin.com/in/beckerbenjamin" },
     { mastodon = "https://universeodon.com/@blbecker" },
+    { firefish = "https://fedia.social/@benj" },
   #   { medium = "https://medium.com/username" },
   #   { microsoft = "https://www.microsoft.com/" },
   #   { orcid = "https://orcid.org/userid" },
