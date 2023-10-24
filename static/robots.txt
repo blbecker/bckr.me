@@ -13,3 +13,5 @@ Disallow: /
 # Block commoncrawl
 User-agent: CCBot
 Disallow: /
+
+Sitemap: sitemap.xml
