@@ -21,8 +21,11 @@ jobs:
       - name:        Checkout
         uses:        actions/checkout@v1
 
-      - name:        Run the build action
-        id:          build
-        uses:        blbecker/hugo-build@v0.111.3-1
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          hugo_args: -D
+          hugo-version: '0.120.3'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify -D
