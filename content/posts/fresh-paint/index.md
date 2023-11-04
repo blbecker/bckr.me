@@ -10,6 +10,7 @@ categories:
   - personal
 thumbnailImage: https://farm1.staticflickr.com/629/21860953461_35de6932ce_b.jpg
 thumbnailImagePosition: left
+thumbnailAlt: A bucket splattered with paint and filled with painting tools.
 metaAlignment: left
 summary: It's been a long time since this blog was updated. Quick updates and plans for the future!
 ---
@@ -24,3 +25,8 @@ Well, I'm posting again. I'm loathe to set a specific goal for posting frequency
 More mechanically, I've updated the theme on here and updated all of the build tooling. I'll write a more detailed article about the machinery that drives this blog, end to end, but, in brief, a CI pipeline in Github Actions builds the page and uploads it to the server. I've been "maintaining" those actions, but hadn't updated any since 2020. [Hugo Build](https://github.com/blbecker/hugo-build) is now updated to Hugo v0.111.3 and I've added Hugo releases to my RSS reader to help track updates. I'm excited to build out more robust deployment pipelines and get more familiar with Github Actions.
 
 Looking forward to writing more and documenting my traverse.:rocket:
+
+---
+
+#### Attributions
+["Laboriously Covering Ugliness"](https://www.flickr.com/photos/domiriel/4320444542/) by [Domiriel](https://www.flickr.com/photos/domiriel/) is licensed under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
