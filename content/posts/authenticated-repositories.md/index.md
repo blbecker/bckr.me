@@ -11,6 +11,7 @@ categories:
   - tech
 thumbnailImage: https://farm1.staticflickr.com/629/21860953461_35de6932ce_b.jpg
 thumbnailImagePosition: left
+thumbnailAlt: A closed lock secures a door latch. The door and lock are lightly weathered.
 metaAlignment: left
 summary: Authenticated software repositories are a great solution for proprietary distribution, as well as controlling access to dev/beta releases. Native tools support this, but proper implementations are non-obvious.
 ---
