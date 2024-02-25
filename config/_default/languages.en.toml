@@ -15,7 +15,7 @@ title = "BCKR"
   rtl = false
   # mainSections = ["section1", "section2"]
 
-[author]
+[params.author]
   name = "Benjamin Becker"
   image = "img/author.jpg"
   headline = "I'm only human, but I'm working on it"
