@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on:              ubuntu-latest
     name:                 Build and deploy master
     steps:
@@ -25,12 +25,15 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name:               Run the deploy action
-        id:                 deploy
-        uses:               blbecker/rsync-deploy@1.1
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
         with:
-          destination_host: ${{ secrets.DeploymentHost }}
-          destination_path: ~/bckr.me/
-          deployment_key:   ${{ secrets.DeploymentKey }}
-          deployment_user:  ${{ secrets.DeploymentUser }}
-          source_dir:       public/
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=bckr-me
