@@ -65,5 +65,6 @@ jobs:
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v3
         with:
+          comment_tag: deployment
           message: |
-            PR deployed to ${{ steps.deploy.outputs.deployment-url }} ! :rocket:
+            PR deployed to ${{ steps.deploy.outputs.deployment-alias-url }} ! :rocket:

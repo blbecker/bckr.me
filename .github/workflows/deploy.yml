@@ -25,15 +25,27 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-build
+          path: |
+            public
+
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: hugo-build
+          path: public
+
       - name: Deploy
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=bckr-me
+          command: pages deploy public --project-name=bckr-me --branch ${{ github.ref_name }}
