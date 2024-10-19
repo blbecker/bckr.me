@@ -1,4 +1,4 @@
-name: Build dev
+name: Validate PR
 
 on:
   pull_request:
@@ -9,9 +9,19 @@ jobs:
   spellcheck:
     uses: austenstone/spellchecker-cli-action-summary/.github/workflows/spellcheck.yml@main
 
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
     runs-on:         ubuntu-latest
-    name:            Build branch
+    name:            Hugo Build
     steps:
       - name:        Checkout
         uses:        actions/checkout@v4
@@ -25,4 +35,35 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify -D
+        run: hugo -D
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-build
+          path: |
+            public
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    needs: [build,gitleaks,spellcheck]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: hugo-build
+          path: public
+
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=bckr-me --branch ${{ github.head_ref }}
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            PR deployed to ${{ steps.deploy.outputs.deployment-url }} ! :rocket:
