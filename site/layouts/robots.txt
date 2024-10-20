@@ -1,0 +1,35 @@
+{{- if hugo.IsProduction | or (eq .Site.Params.env "production") }} 
+Allow: / 
+{{- else }} 
+Disallow: / 
+{{- end }} 
+
+# Block OpenAI Bot
+User-agent: GPTBot
+Disallow: /
+
+# Block OpenAI Plugins
+User-agent: ChatGPT-User
+Disallow: /
+
+# Block Google Bard
+User-agent: Google-Extended
+Disallow: /
+
+# Block commoncrawl
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+‍User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
