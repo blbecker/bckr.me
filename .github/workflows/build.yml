@@ -35,7 +35,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo -D --enableGitInfo
+        run: hugo -D --environment=development
         working-directory: ./site
 
       - name: Archive artifacts
