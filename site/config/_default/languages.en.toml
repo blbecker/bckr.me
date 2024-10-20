@@ -18,8 +18,8 @@ title = "BCKR"
 [params.author]
   name = "Benjamin Becker"
   image = "img/author.jpg"
-  headline = "I'm only human, but I'm working on it"
-  bio = "Gopher it."
+  headline = "Opensource and selfhosted. Posting about things I like."
+  bio = "Born to code. Forced to document."
   links = [
     { email = "mailto:blog@mail.bckr.me" },
   #   { link = "https://link-to-some-website.com/" },
