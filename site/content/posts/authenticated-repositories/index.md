@@ -1,6 +1,7 @@
 ---
 title: "Authenticated Repositories"
 date: 2020-01-27T17:19:28-05:00
+lastmod: 2023-05-04T17:19:28-05:00
 draft: false
 tags:
   - linux

@@ -1,6 +1,7 @@
 ---
 title: "New Radio Day"
 date: 2023-11-02T12:51:02-04:00
+lastmod: 2023-11-02T12:51:02-04:00
 draft: false
 tags:
   - updates
