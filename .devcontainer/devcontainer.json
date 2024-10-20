@@ -39,7 +39,8 @@
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"GitHub.vscode-github-actions",
-				"tamasfe.even-better-toml"
+				"tamasfe.even-better-toml",
+				"github.vscode-github-actions"
 			]
 		}
 	}
