@@ -19,8 +19,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
         with:
-          hugo-version: '0.120.3'
-          # extended: true
+          hugo-version: '0.136.2'
+          extended: true
 
       - name: Build
         run: hugo --minify --enableGitInfo
@@ -31,7 +31,8 @@ jobs:
         with:
           name: hugo-build
           path: |
-            public
+            site/public
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,4 +50,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site/public --project-name=bckr-me --branch ${{ github.ref_name }}
+          command: pages deploy public --project-name=bckr-me --branch ${{ github.ref_name }}
