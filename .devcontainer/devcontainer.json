@@ -26,12 +26,22 @@
 			"version": "latest"
 		}
 	},
-
 	"runArgs": [
 		"--userns=keep-id"
 	],
 	"containerEnv": {
 		"HOME": "/home/vscode"
+	},
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"GitHub.vscode-github-actions",
+				"tamasfe.even-better-toml"
+			]
+		}
 	}
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
