@@ -1,0 +1,11 @@
+# Cloudflare Headers: https://developers.cloudflare.com/pages/configuration/headers/
+
+# Default headers that are applied everywhere.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer\
+  Link: https://webmention.io/bckr.me/webmention; rel="webmention"
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'
