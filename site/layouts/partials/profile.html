@@ -17,9 +17,9 @@
       {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy) }}
     {{ end }}
   {{ end }}
-  <h1 class="p-name text-4xl font-extrabold">
+  <a class="p-name u-url u-uid text-4xl font-extrabold" href="https://bckr.me" >
     {{ site.Language.Params.Author.name | default site.Title }}
-  </h1>
+  </a>
   {{ with site.Language.Params.Author.headline }}
     <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
       {{ . | markdownify | emojify }}
