@@ -5,6 +5,7 @@ draft: true
 url: about
 menus: Slashes
 summary: A page all about me. How droll.
+weight: 10
 ---
 
 # About

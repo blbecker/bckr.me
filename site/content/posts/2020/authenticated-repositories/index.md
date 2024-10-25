@@ -15,6 +15,8 @@ thumbnailImagePosition: left
 thumbnailAlt: A closed lock secures a door latch. The door and lock are lightly weathered.
 metaAlignment: left
 summary: Authenticated software repositories are a great solution for proprietary distribution, as well as controlling access to dev/beta releases. Native tools support this, but proper implementations are non-obvious.
+aliases:
+- posts/authenticated-repositories
 ---
 
 Although RPM and Debian repos are generally intended for distributing software to the public, there are times when a more private approach is desired. Whether for proprietary software or merely keeping "the internet" out of development spaces, let's take a look at how to secure linux package repositories in a way that is transparent to native tools.

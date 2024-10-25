@@ -15,6 +15,8 @@ thumbnailImagePosition: left
 
 metaAlignment: left
 summary: New radio day for KE8TDE and some thoughts on handset programming.
+aliases:
+- posts/new-radio-day
 ---
 
 # New Radio!
