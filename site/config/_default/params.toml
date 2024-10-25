@@ -13,7 +13,7 @@ enableSearch = true
 enableCodeCopy = true
 
 # robots = ""
-
+mainSections = ['posts']
 [header]
   layout = "hybrid" # valid options: basic, hamburger, hybrid, custom
   logo = "img/logo.png"
