@@ -77,10 +77,10 @@ jobs:
           path: |
             ~/.npm
             node_modules
-          key: ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
+          key: ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
           restore-keys: |
-            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
             ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
+            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
             ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}
 
 
