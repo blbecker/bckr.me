@@ -21,6 +21,9 @@ jobs:
 
   build:
     runs-on:         ubuntu-latest
+    env:
+      HUGO_VERSION: '0.136.2'
+      HUGO_CACHEDIR: /tmp/hugo_cache
     name:            Hugo Build
     steps:
       - name:        Checkout
@@ -31,8 +34,18 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
         with:
-          hugo-version: '0.136.2'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.HUGO_CACHEDIR }}
+            resources/_gen/images
+          key: ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.base_ref}}-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.base_ref}}
+            ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.head_ref}}
 
       - name: Build
         run: hugo -D --environment=development
@@ -49,12 +62,27 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
+    env:
+      WRANGLER_VERSION: '3.78.10'
     needs: [build,gitleaks,spellcheck]
     steps:
       - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
           name: hugo-build
           path: public
+
+      - name: Cache wrangler install
+        uses: actions/cache@v1
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
+          restore-keys: |
+            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
+            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
+            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}
+
 
       - name: Deploy
         id: deploy
