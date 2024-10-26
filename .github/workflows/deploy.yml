@@ -27,7 +27,7 @@ jobs:
           path: |
             ${{ env.HUGO_CACHEDIR }}
             resources/_gen/images
-          key: ${{ runner.os }}-hugobuild-${{github.ref}}-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-hugobuild-${{github.ref}}-${{ hashFiles('**/go.sum','site/assets') }}
           restore-keys: |
             ${{ runner.os }}-hugobuild-${{github.ref}}
 

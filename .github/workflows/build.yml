@@ -42,10 +42,10 @@ jobs:
           path: |
             ${{ env.HUGO_CACHEDIR }}
             resources/_gen/images
-          key: ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.base_ref}}-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.head_ref}}-${{ hashFiles('**/go.sum','site/assets') }}
           restore-keys: |
-            ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.base_ref}}
             ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.head_ref}}
+            ${{ runner.os }}-hugobuild-${{ env.HUGO_VERSION }}-${{github.base_ref}}
 
       - name: Build
         run: hugo -D --environment=development
