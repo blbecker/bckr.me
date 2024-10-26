@@ -14,7 +14,7 @@ thumbnailImagePosition: left
 thumbnailAlt: A bucket splattered with paint and filled with painting tools.
 metaAlignment: left
 summary: It's been a long time since this blog was updated. Quick updates and plans for the future!
-aliases:
+aliases:  # #TODO Aliases aren't working :/
 - posts/fresh-paint
 ---
 
