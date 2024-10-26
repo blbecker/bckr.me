@@ -16,7 +16,7 @@
 			"userGid": "1000"
 		},
 		"ghcr.io/devcontainers/features/go:1": {
-			"version": "1.23"
+			"version": "latest"
 		},
 		"ghcr.io/devcontainers/features/hugo:1": {
 			"extended": true,
@@ -40,16 +40,17 @@
 				"streetsidesoftware.code-spell-checker",
 				"GitHub.vscode-github-actions",
 				"tamasfe.even-better-toml",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"Gruntfuggly.todo-tree"
 			]
 		}
-	}
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "zsh scripts/devcontainer-postcreate.sh"
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
