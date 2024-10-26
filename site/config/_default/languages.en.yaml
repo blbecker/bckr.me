@@ -1,0 +1,19 @@
+title: BCKR
+params:
+  languageCode: en
+  dateFormat: 2 January 2006
+  languageName: English
+  displayName: EN
+  isoCode: en
+  weight: 1
+  rtl: false
+  author:
+    name: Benjamin Becker
+    image: img/author.jpg
+    headline: Opensource and selfhosted. Posting about things I like.
+    bio: The revolution will not be proprietary.
+    links:
+      - email: 'mailto:blog@mail.bckr.me'
+      - github: 'https://github.com/blbecker'
+      - linkedin: 'https://www.linkedin.com/in/beckerbenjamin/'
+      - mastodon: 'https://mstdn.social/@bnjmn'
