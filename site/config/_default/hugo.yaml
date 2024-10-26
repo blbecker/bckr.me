@@ -5,19 +5,33 @@
 baseURL: 'https://bckr.me/'
 defaultContentLanguage: en
 enableRobotsTXT: true
+
+# Pagination settings
 pagination:
   pagerSize: 10
   summaryLength: 0
   enableGitInfo: true
+
+# Custom lookup order to prioritize frontmatter values
 frontmatter:
   lastmod:
     - lastmod
     - ':default'
+
+# Congo requires these
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+
+# Error instead of warning on icon lookup failures
+params:
+  icons:
+    throw_on_error: true
+
+
+# Setup hugo mods
 module:
   proxy: direct
   hugoVersion:
@@ -28,3 +42,5 @@ module:
       disable: false
     - path: github.com/hugomods/icons/vendors/bootstrap
     - path: github.com/hugomods/icons/vendors/font-awesome
+    - path: github.com/hugomods/icons/vendors/mdi
+    - path: github.com/hugomods/shortcodes
