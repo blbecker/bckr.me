@@ -8,6 +8,7 @@ summary: A page all about me. How droll.
 weight: 10
 showAuthor: false
 sharingLinks: false
+invertPagination: true
 ---
 
 I'm a software engineer in Columbus, Ohio. I live here with my wife, Rachel, a dog, and two cats. They're all pretty neat.
