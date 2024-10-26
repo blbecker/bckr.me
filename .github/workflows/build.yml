@@ -74,14 +74,14 @@ jobs:
       - name: Cache wrangler install
         uses: actions/cache@v1
         with:
-          path: | 
+          path: |
             ~/.npm
             ./node_modules
-          key: ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
+          key: ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
           restore-keys: |
-            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
-            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
-            ${{ runner.os }}-hugobuild-${{ env.WRANGLER_VERSION }}
+            ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
+            ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
+            ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}
 
 
       - name: Deploy
