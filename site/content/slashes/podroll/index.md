@@ -7,6 +7,7 @@ menus: Slashes
 summary: A roll of pods.
 showAuthor: false
 sharingLinks: false
+invertPagination: true
 ---
 
 - [The History of Byzantium](https://thehistoryofbyzantium.com/)

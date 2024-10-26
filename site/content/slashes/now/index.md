@@ -9,6 +9,7 @@ weight: 30
 showTableOfContents: true
 showAuthor: false
 sharingLinks: false
+invertPagination: true
 ---
 
 ## Projects
