@@ -79,7 +79,6 @@ jobs:
             ./node_modules
           key: ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
           restore-keys: |
-            ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
             ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.base_ref}}
             ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}
 
