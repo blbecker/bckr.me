@@ -15,7 +15,7 @@ thumbnailImagePosition: left
 
 metaAlignment: left
 summary: New radio day for KE8TDE and some thoughts on handset programming.
-aliases:
+aliases: # #TODO Aliases aren't working :/
 - posts/new-radio-day
 ---
 
