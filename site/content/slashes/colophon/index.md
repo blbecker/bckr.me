@@ -8,6 +8,7 @@ summary: How it's made!
 weight: 40
 showAuthor: false
 sharingLinks: false
+invertPagination: true
 ---
 
 ## Philosophy
