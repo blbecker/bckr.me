@@ -1,2 +1,12 @@
+github.com/hugomods/icons v0.6.5 h1:vuaBlVO/MTsQNir4JWvPazjmtMMWG55Lif6VHCmd7KI=
+github.com/hugomods/icons v0.6.5/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/hugomods/icons/vendors/bootstrap v0.5.8 h1:6M+G4F58pt3GkiGFeCDjKonExVV8PbBAVhDS8YQT7oY=
+github.com/hugomods/icons/vendors/bootstrap v0.5.8/go.mod h1:jla3IbQAByyz45AikUAw/c7h0wUMUn5Z2j4gh+zVDj4=
+github.com/hugomods/icons/vendors/font-awesome v0.6.9 h1:ZpnyXeCOa9n7NBVURSRIZuGZykz80udHT8yxM+RE6NQ=
+github.com/hugomods/icons/vendors/font-awesome v0.6.9/go.mod h1:YPxdyI0WHuZfvwNeG8ADHXwnWmWIuu3PqiYGz8q9Skw=
+github.com/hugomods/icons/vendors/mdi v0.3.7 h1:YUU61C3a0wUa0PejKc6fl+WntDjC/kqyqK4Io5Xkhww=
+github.com/hugomods/icons/vendors/mdi v0.3.7/go.mod h1:uTiqmqmEmUe3wpVPpaKhAWSu5zunmBON1D2tgOyZWQs=
+github.com/hugomods/shortcodes v0.23.0 h1:ZB7bY7vvx917IkXg+ab08QD5H4biKzAsLKDMrWeoziI=
+github.com/hugomods/shortcodes v0.23.0/go.mod h1:EnVopbZMNI/HeteM3Lp3phBTCRLvPSe7l142qhRFFPY=
 github.com/jpanther/congo/v2 v2.9.0 h1:mq1U8Zqw/F+9dk+AgH7W6Wl2M4LLiRP4v/BCTx4c01Y=
 github.com/jpanther/congo/v2 v2.9.0/go.mod h1:1S7DRoO1ZYS4YUdFd1LjTkdyjQwsjFWd8TqSfz3Jd+M=
