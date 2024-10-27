@@ -1,4 +1,4 @@
-<a class="u-repost-of {{ .Get "class"}}" {{ with .Get "href" -}}
+<a class="u-repost {{ .Get "class"}}" {{ with .Get "href" -}}
 href="{{ . }}"
 {{- else -}}
 {{ errorf "The %q shortcode requires an 'href' argument. See %s" .Name .Position }}
