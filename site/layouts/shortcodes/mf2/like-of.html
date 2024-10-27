@@ -1,0 +1,7 @@
+<a class="u-like-of {{ .Get "class"}}" {{ with .Get "href" -}}
+href="{{ . }}"
+{{- else -}}
+{{ errorf "The %q shortcode requires an 'href' argument. See %s" .Name .Position }}
+{{- end -}}
+>{{ .Inner | markdownify | emojify -}}
+</a>
