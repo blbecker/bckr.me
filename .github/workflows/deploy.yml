@@ -8,18 +8,18 @@ on:
 
 jobs:
   build:
-    runs-on:              ubuntu-latest
-    name:                 Build and deploy master
+    runs-on: ubuntu-latest
+    name: Build and deploy master
     steps:
-      - name:        Checkout
-        uses:        actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
         with:
-          hugo-version: '0.136.2'
+          hugo-version: "0.136.2"
           extended: true
 
       - uses: actions/cache@v4
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     env:
-      WRANGLER_VERSION: '3.78.10'
+      WRANGLER_VERSION: "3.78.10"
     needs: build
     steps:
       - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
@@ -73,3 +73,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: ${{ env.WRANGLER_VERSION }}
           command: pages deploy public --project-name=bckr-me --branch ${{ github.ref_name }}
+
