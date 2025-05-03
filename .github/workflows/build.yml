@@ -3,7 +3,7 @@ name: Validate PR
 on:
   pull_request:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   spellcheck:
@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: tbroadley/spellchecker-cli-action@v1
-  spellcheck:
-    uses: austenstone/spellchecker-cli-action-summary/.github/workflows/spellcheck.yml@main
-
   gitleaks:
     runs-on: ubuntu-latest
     steps:
@@ -26,14 +23,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build:
-    runs-on:         ubuntu-latest
+    runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: '0.136.2'
+      HUGO_VERSION: "0.136.2"
       HUGO_CACHEDIR: /tmp/hugo_cache
-    name:            Hugo Build
+    name: Hugo Build
     steps:
-      - name:        Checkout
-        uses:        actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -69,8 +66,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     env:
-      WRANGLER_VERSION: '3.78.10'
-    needs: [build,gitleaks,spellcheck]
+      WRANGLER_VERSION: "3.78.10"
+    needs: [build, gitleaks, spellcheck]
     steps:
       - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
@@ -86,7 +83,6 @@ jobs:
           key: ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref}}
           restore-keys: |
             ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}
-
 
       - name: Deploy
         id: deploy
