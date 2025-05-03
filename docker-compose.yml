@@ -1,0 +1,14 @@
+name: bckr
+
+services:
+  hugo:
+    image: hugomods/hugo:go-git-0.145.0
+    command: server -D
+    volumes:
+      - ./site:/src
+      - hugo_cache:/tmp/hugo_cache
+    ports:
+      - 1313:1313
+#
+volumes:
+  hugo_cache:
