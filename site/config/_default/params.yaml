@@ -4,6 +4,7 @@
 #
 # Refer to the theme docs for more details about each of these parameters.
 # https://jpanther.github.io/congo/docs/configuration/#theme-parameters
+
 colorScheme: avocado
 defaultAppearance: dark
 autoSwitchAppearance: true
@@ -12,7 +13,7 @@ enableCodeCopy: true
 mainSections:
   - posts
 header:
-  layout: hybrid  # valid options: basic, hamburger, hybrid, custom
+  layout: hybrid # valid options: basic, hamburger, hybrid, custom
   logo: img/logo.png
   showTitle: true
 footer:
@@ -31,7 +32,7 @@ article:
   showBreadcrumbs: false
   showDraftLabel: true
   showEdit: true
-  editURL: 'https://github.com/blbecker/bckr.me/blob/main/site/content'
+  editURL: "https://github.com/blbecker/bckr.me/blob/main/site/content"
   editAppendPath: true
   showHeadingAnchors: true
   showPagination: true
