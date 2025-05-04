@@ -5,10 +5,11 @@ services:
     image: hugomods/hugo:go-git-0.145.0
     command: server -D
     volumes:
-      - ./site:/src
+      - .:/src
       - hugo_cache:/tmp/hugo_cache
+    working_dir: /src/site
     ports:
       - 1313:1313
-#
+
 volumes:
   hugo_cache:
