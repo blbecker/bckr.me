@@ -13,5 +13,5 @@ invertPagination: true
 
 A [Hello](https://alastairjohnston.com/introducing-hello-pages/) page describes the ways I prefer to keep in touch. This is one my [Slash Pages]( {{< ref "Slashes" >}} )
 
-- [Email](mailto:blog@mail.bckr.me) is my preferred way to keep in touch. 
-- I'm also active on [Mastodon](https://mstdn.social/@bnjmn).
+- [Email](mailto:blog@mail.bckr.me) is my preferred way to keep in touch.
+- I'm also active on [Mastodon](https://mstdn.social/@bnjmn) and [Bluesky](https://bsky.app/profile/bckr.me).
