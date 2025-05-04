@@ -6,11 +6,20 @@ Source for <https://bckr.me>
 
 ## Dev
 
-This website is built using [Hugo](https://gohugo.io/). To build the site, run:
+This website is built using [Hugo](https://gohugo.io/). There's a docker-compose at the root of the repo for building and operations. By default, `hugo server` is run as a compose service serving the website at <http://localhost:1313>
+
+Running in dev mode
 
 ```bash
 docker compose up -d \
   --remove-orphans
+```
+
+Creating a post
+
+```bash
+docker compose run hugo new content path/to/content
+docker compose run hugo new content posts/$(date +%Y)/${post_title}
 ```
 
 Theme: <https://github.com/jpanther/congo>
