@@ -13,7 +13,8 @@ params:
     headline: Opensource and selfhosted. Posting about things I like.
     bio: The revolution will not be proprietary.
     links:
-      - email: 'mailto:blog@mail.bckr.me'
-      - github: 'https://github.com/blbecker'
-      - linkedin: 'https://www.linkedin.com/in/beckerbenjamin/'
-      - mastodon: 'https://mstdn.social/@bnjmn'
+      - email: "mailto:blog@mail.bckr.me"
+      - github: "https://github.com/blbecker"
+      - linkedin: "https://www.linkedin.com/in/beckerbenjamin/"
+      - mastodon: "https://mstdn.social/@bnjmn"
+      - bluesky: "https://bsky.app/profile/bckr.me"
