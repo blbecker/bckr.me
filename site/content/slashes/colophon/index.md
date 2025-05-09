@@ -19,7 +19,7 @@ The code of the website is licensed under [GPLv3](https://www.gnu.org/licenses/g
 
 ## Toolchain
 
-This is a static website built using Hugo. The theme is Congo by JPanther, with some minor tweaks to handle webformats for the indieweb. The source code is hosted on [Github](https://github.com/blbecker/bckr.me) and built/deployed using Github Actions. Because this site is open-source, it's eligible for the Github Actions free tier, so it's a very convenient way to operate the project.
+This is a static website built using Hugo. The theme is [Congo](https://git.io/hugo-congo) by JPanther, with some minor tweaks to handle webformats for the indieweb. The source code is hosted on [Github](https://github.com/blbecker/bckr.me) and built/deployed using Github Actions. Because this site is open-source, it's eligible for the Github Actions free tier, so it's a very convenient way to operate the project.
 
 ## Hosting
 
@@ -29,8 +29,8 @@ Large media is stored on Backblaze B2 and served via Cloudflare. Backblaze and C
 
 ## IndieWeb
 
-This website is configured for Indieweb functionality. Webmentions are received via [webmention.io](https://webmention.io/). If I continue leverage webmentions long-terrm, I may migrate my receiver to my [homelab]( {{< ref "now#Homelab" >}} ) or look at a serverless solution using Cloudflare Workers and some kind of cheap storage.
+This website is configured for Indieweb functionality. Webmentions are received via [webmention.io](https://webmention.io/). If I continue to leverage webmentions long-terrm, I may migrate my receiver to my [homelab]( {{< ref "now#Homelab" >}} ) or look at a serverless solution using Cloudflare Workers and some kind of cheap storage.
 
 I haven't wired up webmention sending yet, but I plan on utilizing [timmarinin/Webmention](https://github.com/timmarinin/webmention) or [willnorris/webmention](https://github.com/willnorris/webmention) as a Github Actions step after deployment to send webmentions.
 
-My current theme doesn't include microformats markup out of the box, so I've had to override some layouts. So far, this hasn't been too intrusive so maintaining compatibility with upstream shouldn't be too difficult. I plan to add shortcodes for microformat markup in posts, but I haven't gotten to that yet.
+My current theme doesn't include microformats markup out of the box, so I've had to override some layouts. So far, this hasn't been too intrusive so maintaining compatibility with upstream shouldn't be too difficult. I've added shortcodes for some mf2 markup to simplify using them inside content.
