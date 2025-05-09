@@ -39,4 +39,4 @@ Interestingly, I haven't spent _that much_ longer working with this radio than I
 
 #### Attributions
 
-["Radio Tower"](https://www.flickr.com/photos/philedmonds/6177301721/) by [Phil Edmonds](https://www.flickr.com/photos/philedmonds/) is licensed under [CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)
+Thumbnail: ["Radio Tower"](https://www.flickr.com/photos/philedmonds/6177301721/) by [Phil Edmonds](https://www.flickr.com/photos/philedmonds/) is licensed under [CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)
