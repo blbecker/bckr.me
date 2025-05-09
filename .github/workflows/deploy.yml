@@ -73,4 +73,3 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: ${{ env.WRANGLER_VERSION }}
           command: pages deploy public --project-name=bckr-me --branch ${{ github.ref_name }}
-
