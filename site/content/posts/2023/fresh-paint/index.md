@@ -34,4 +34,4 @@ Looking forward to writing more and documenting my traverse.:rocket:
 
 #### Attributions
 
-["Laboriously Covering Ugliness"](https://www.flickr.com/photos/domiriel/4320444542/) by [Domiriel](https://www.flickr.com/photos/domiriel/) is licensed under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
+Thumnail: ["Laboriously Covering Ugliness"](https://www.flickr.com/photos/domiriel/4320444542/) by [Domiriel](https://www.flickr.com/photos/domiriel/) is licensed under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
