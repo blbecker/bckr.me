@@ -68,7 +68,7 @@ jobs:
     name: Deploy
     env:
       WRANGLER_VERSION: "3.78.10"
-    needs: [build, gitleaks, spellcheck]
+    needs: [build, gitleaks]
     steps:
       - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
