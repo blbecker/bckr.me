@@ -39,7 +39,8 @@ module:
     min: 0.136.2
   imports:
     - path: github.com/jpanther/congo/v2
-      disable: false
+      disable: true
+    - path: github.com/luizdepra/hugo-coder
     - path: github.com/hugomods/icons/vendors/bootstrap
     - path: github.com/hugomods/icons/vendors/font-awesome
     - path: github.com/hugomods/icons/vendors/mdi

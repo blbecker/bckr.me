@@ -11,5 +11,6 @@ require (
 	github.com/hugomods/icons/vendors/mdi v0.3.8 // indirect
 	github.com/hugomods/shortcodes v0.25.0 // indirect
 	github.com/jpanther/congo/v2 v2.11.0 // indirect
+	github.com/luizdepra/hugo-coder v0.0.0-20250228200816-6bc00595434a // indirect
 	github.com/twbs/icons v1.12.1 // indirect
 )

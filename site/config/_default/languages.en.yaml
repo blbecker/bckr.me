@@ -1,20 +1,35 @@
 title: BCKR
 params:
-  languageCode: en
-  dateFormat: 2 January 2006
-  languageName: English
-  displayName: EN
-  isoCode: en
-  weight: 1
-  rtl: false
-  author:
-    name: Benjamin Becker
-    image: img/author.jpg
-    headline: Opensource and selfhosted. Posting about things I like.
-    bio: The revolution will not be proprietary.
-    links:
-      - email: "mailto:blog@mail.bckr.me"
-      - github: "https://github.com/blbecker"
-      - linkedin: "https://www.linkedin.com/in/beckerbenjamin/"
-      - mastodon: "https://mstdn.social/@bnjmn"
-      - bluesky: "https://bsky.app/profile/bckr.me"
+  author: "Benjamin Becker"
+  info:
+  description:
+  keywords: blog,developer,personal
+  avatarurl: img/author.jpg
+  since: 2020
+  colorScheme: auto
+  social:
+    - name: Email
+      url: mailto:blog@mail.bckr.me
+      icon:
+    - name: Github
+    - name: LinkedIn
+    - name: Mastodon
+    - name: Bluesky
+#   languageCode: en
+#   dateFormat: 2 January 2006
+#   languageName: English
+#   displayName: EN
+#   isoCode: en
+#   weight: 1
+#   rtl: false
+#   author:
+#     name: Benjamin Becker
+#     image: img/author.jpg
+#     headline: Opensource and selfhosted. Posting about things I like.
+#     bio: The revolution will not be proprietary.
+#     links:
+#       - email: "mailto:blog@mail.bckr.me"
+#       - github: "https://github.com/blbecker"
+#       - linkedin: "https://www.linkedin.com/in/beckerbenjamin/"
+#       - mastodon: "https://mstdn.social/@bnjmn"
+#       - bluesky: "https://bsky.app/profile/bckr.me"
