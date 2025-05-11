@@ -94,6 +94,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: ${{ env.WRANGLER_VERSION }}
           command: |
+            # The wrangler command is prefixed with "/usr/local/bin/npx wrangler", so the conditionals here don't work. Extract the branch name into a variable so to remove the conditional AI!
             if [ "${{ github.event_name }}" = "pull_request" ]; then
               pages deploy public --project-name=bckr-me --branch ${{ github.head_ref }}
             else
