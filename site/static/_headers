@@ -8,4 +8,4 @@
   Link: https://webmention.io/bckr.me/webmention; rel="webmention"
   Cross-Origin-Resource-Policy: same-origin
   Strict-Transport-Security: max-age=31536000
-  Content-Security-Policy: default-src 'self' *.bckr.me
+  Content-Security-Policy: default-src 'self' *.bckr.me; style-src 'self' 'unsafe-inline';
