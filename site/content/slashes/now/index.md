@@ -1,6 +1,6 @@
 ---
 title: "Now"
-date: 2024-10-26T17:06:02Z
+date: 2025-05-09T12:00:00-04:00
 draft: false
 url: now
 menus: Slashes

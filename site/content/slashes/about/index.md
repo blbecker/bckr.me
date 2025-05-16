@@ -1,6 +1,6 @@
 ---
 title: "About"
-date: 2024-10-24T09:08:55-04:00
+date: 2025-05-09T12:00:00-04:00
 draft: false
 url: about
 menus: Slashes

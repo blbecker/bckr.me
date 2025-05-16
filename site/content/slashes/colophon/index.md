@@ -1,6 +1,6 @@
 ---
 title: "Colophon"
-date: 2024-10-24T09:58:22-04:00
+date: 2025-05-09T12:00:00-04:00
 draft: false
 url: colophon
 menus: Slashes
