@@ -24,7 +24,6 @@
             height="{{ $height }}"
             {{ with $imgClass }}class="{{ . }}"{{ end }}
             {{ with $altText }}alt="{{ . }}"{{ end }}
-            {{ with $lazy }}loading="lazy" decoding="async"{{ end }}
             {{ if lt .Width 660 }}
               src="{{ .RelPermalink }}"
             {{ else }}
