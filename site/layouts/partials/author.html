@@ -6,7 +6,38 @@
       {{ $authorImage := resources.Get . }}
       {{ if $authorImage }}
         {{ $imgClass := "u-photo !mb-0 !mt-0 me-4 w-24 h-auto rounded-full" }}
-        {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy  ) }}
+        {{ $pictureClass := "!mb-0 !mt-0 me-4 w-24 h-auto rounded-full" }}
+        {{ with $authorImage }}
+          {{ $width := .Width }}
+          {{ $height := .Height }}
+          <picture class="{{ $pictureClass }}">
+            <img
+              width="{{ $width }}"
+              height="{{ $height }}"
+              {{ with $imgClass }}class="{{ . }}"{{ end }}
+              {{ with $altText }}alt="{{ . }}"{{ end }}
+              {{ with $lazy }}loading="lazy" decoding="async"{{ end }}
+              {{ if lt .Width 660 }}
+                src="{{ .RelPermalink }}"
+              {{ else }}
+                src="{{ (.Resize "660x").RelPermalink }}"
+                srcset=" {{- (.Resize "330x").RelPermalink }} 330w,
+                {{- (.Resize "660x").RelPermalink }} 660w
+                {{ if gt .Width 1024 }}
+                  ,{{ (.Resize "1024x").RelPermalink }} 1024w
+                {{ else }}
+                  ,{{ .RelPermalink }} {{ .Width }}w
+                {{ end }}
+                {{ if gt .Width 1320 }}
+                  ,{{ (.Resize "1320x").RelPermalink }} 1320w
+                {{ else }}
+                  ,{{ .RelPermalink }} {{ .Width }}w
+                {{ end }}"
+                sizes="100vw"
+              {{ end }}
+            />
+          </picture>
+        {{ end }}
       {{ end }}
     {{ end }}
     <div class="place-self-center">
