@@ -13,7 +13,7 @@
   {{ with site.Language.Params.Author.image }}
     {{ $authorImage := resources.Get . }}
     {{ if $authorImage }}
-      {{ $imgClass := "u-photo" }}
+      {{ $imgClass := "u-photo mb-2 h-auto w-36 rounded-full" }}
       {{ $pictureClass := "mb-2 h-auto w-36 rounded-full" }}
       {{ with $authorImage }}
         {{ $width := .Width }}
@@ -24,6 +24,7 @@
             height="{{ $height }}"
             {{ with $imgClass }}class="{{ . }}"{{ end }}
             {{ with $altText }}alt="{{ . }}"{{ end }}
+            {{ with $lazy }}loading="lazy" decoding="async"{{ end }}
             {{ if lt .Width 660 }}
               src="{{ .RelPermalink }}"
             {{ else }}
