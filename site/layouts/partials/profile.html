@@ -13,7 +13,7 @@
   {{ with site.Language.Params.Author.image }}
     {{ $authorImage := resources.Get . }}
     {{ if $authorImage }}
-      {{ $imgClass := "u-photo mb-2 h-auto w-36 rounded-full" }}
+      {{ $imgClass := "u-photo" }}
       {{ $pictureClass := "mb-2 h-auto w-36 rounded-full" }}
       {{ with $authorImage }}
         {{ $width := .Width }}
