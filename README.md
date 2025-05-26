@@ -19,7 +19,7 @@ Creating a post
 
 ```bash
 docker compose run hugo new content path/to/content
-docker compose run hugo new content posts/$(date +%Y)/${post_title}
+docker compose run hugo new content posts/$(date +%Y)/${post_title}.md
 ```
 
 Theme: <https://github.com/jpanther/congo>
@@ -31,3 +31,7 @@ Theme: <https://github.com/jpanther/congo>
 - [h-entry](http://microformats.org/wiki/h-entry#Properties) markup on Posts
 - Shortcodes for some microformats
   - Hugo also supports [appending attributes](https://gohugo.io/content-management/markdown-attributes/#overview) for some elements in Markdown
+
+## Useful links
+
+- [Hugo Emojis](https://gohugo.io/quick-reference/emojis/#smileys--emotion)
