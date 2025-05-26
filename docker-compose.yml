@@ -10,6 +10,7 @@ services:
     working_dir: /src/site
     ports:
       - 1313:1313
+    user: 1000:1000
 
 volumes:
   hugo_cache:
