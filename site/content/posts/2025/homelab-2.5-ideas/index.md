@@ -1,7 +1,6 @@
 ---
 title: "Homelab 2.5 Ideas"
 date: 2025-05-25T20:38:39Z
-draft: true
 tags:
   - homelab
   - moving
