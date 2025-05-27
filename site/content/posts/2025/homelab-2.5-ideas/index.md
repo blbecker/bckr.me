@@ -60,4 +60,4 @@ My existing UPS units (a [Tripp Lite SMART1500LCDXL](https://tripplite.eaton.com
 
 ### A new cabinet
 
-Probably something like [this 15U cabinet](https://www.amazon.com/NavePoint-Network-Cabinet-Enclosure-Casters/dp/B01A6JQQHU). I'd like to get something that looks (and sounds :loud*sound::grimacing:) reasonable in our office. The new stack doesn't make \_too much* noise, so I'm hopeful that a fully enclosed cabinet will be nearly silent.
+Probably something like [this 15U cabinet](https://www.amazon.com/NavePoint-Network-Cabinet-Enclosure-Casters/dp/B01A6JQQHU). I'd like to get something that looks (and sounds :loud_sound::grimacing:) reasonable in our office. The new stack doesn't make _too much_ noise, so I'm hopeful that a fully enclosed cabinet will be nearly silent.
