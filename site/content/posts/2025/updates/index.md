@@ -1,7 +1,6 @@
 ---
 title: "Updates"
 date: 2025-06-10T20:59:50Z
-draft: true
 tags:
   - meta
   - blog
