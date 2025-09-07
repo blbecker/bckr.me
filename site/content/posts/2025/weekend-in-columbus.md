@@ -1,5 +1,5 @@
 ---
-title: "Weekend in Colubmbus"
+title: "Weekend in Columbus"
 date: 2025-09-07T15:37:25Z
 draft: true
 tags:
