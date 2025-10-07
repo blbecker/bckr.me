@@ -18,7 +18,7 @@ As I've [mentioned elsewhere]( {{< ref "now#moving-to-puerto-rico" >}}), I'll be
 
 ## Networking
 
-For quite some time, my networking solution was entirely Ubiquiti UniFi gear. I'd originally really liked the UniFi equipment, but over time had soured on it. A mix of underpowered hardware, end of life software, and being much more comfortable with "enterprise" equipment caused me to look elsewhere when the time came to replace my USG 4. I replaced it with a [Mikrotik Router](https://mikrotik.com/product/ccr2004_16g_2splus)(a manufacturer whose products I'd come to like at work) and had been much happier with the results. Now that I'm moving, I'll complete the replacement and remove the remaining Uniquiti gear.
+For quite some time, my networking solution was entirely Ubiquiti UniFi gear. I'd originally really liked the UniFi equipment, but over time had soured on it. A mix of underpowered hardware, end of life software, and being much more comfortable with "enterprise" equipment caused me to look elsewhere when the time came to replace my USG 4. I replaced it with a [Mikrotik Router](https://mikrotik.com/product/ccr2004_16g_2splus)(a manufacturer whose products I'd come to like at work) and had been much happier with the results. Now that I'm moving, I'll complete the replacement and remove the remaining Ubiquiti gear.
 
 ### Replace switch
 
@@ -60,4 +60,4 @@ My existing UPS units (a [Tripp Lite SMART1500LCDXL](https://tripplite.eaton.com
 
 ### A new cabinet
 
-Probably something like [this 15U cabinet](https://www.amazon.com/NavePoint-Network-Cabinet-Enclosure-Casters/dp/B01A6JQQHU). I'd like to get something that looks (and sounds :loud_sound::grimacing:) reasonable in our office. The new stack doesn't make _too much_ noise, so I'm hopeful that a fully enclosed cabinet will be nearly silent.
+Probably something like [this 15U cabinet](https://www.amazon.com/NavePoint-Network-Cabinet-Enclosure-Casters/dp/B01A6JQQHU). I'd like to get something that looks (and sounds :loud*sound::grimacing:) reasonable in our office. The new stack doesn't make \_too much* noise, so I'm hopeful that a fully enclosed cabinet will be nearly silent.
