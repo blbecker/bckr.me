@@ -11,7 +11,7 @@ sharingLinks: false
 invertPagination: true
 ---
 
-I'm a software engineer in Columbus, Ohio. I live here with my wife, Rachel, a dog, and a cat. They're all pretty neat. I've lived in Columbus for quite some time now and will be [moving to San Juan, Puerto Rico](/now#moving-to-puerto-rico) soon. It's a move that I've been interested in since my first visit to the island and am very excited that it is finally happening!
+I'm a software engineer in San Juan, Puerto Rico. I live here with my wife, Rachel, a dog, and a cat. They're all pretty neat. We moved here in June of 2025 and have been having a great time exploring the island and getting to know our new home. Estamos aprendiendo español poco a poco!
 
 I'm a hacker, in the classical sense; I'm an advocate for open-source software and open solutions in general. I find intellectual property--the ownigng of ideas--obscene. I value digital privacy and freedom. I prefer to self-host my own services and resist the dominance of Big Tech. I was a participant in the early Internet and consider this website to be my small contributing to keeping that light burning.
 
