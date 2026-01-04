@@ -1,7 +1,6 @@
 ---
 title: "Commit to Main"
 date: 2026-01-04T17:04:44Z
-draft: true
 tags:
   - updates
   - blog
