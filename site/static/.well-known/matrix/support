@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "email_address": "matrix-support@mail.bckr.me",
+      "matrix_id": "@benjamin:bckr.me",
+      "role": "m.role.admin"
+    },
+    {
+      "email_address": "matrix-security@mail.bckr.me",
+      "role": "m.role.security"
+    }
+  ]
+}
+
