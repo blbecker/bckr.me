@@ -9,3 +9,6 @@
   Cross-Origin-Resource-Policy: same-origin
   Strict-Transport-Security: max-age=31536000
   Content-Security-Policy: default-src 'self' *.bckr.me; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';
+
+/.well-known/matrix/*
+  Content-Type: application/json
