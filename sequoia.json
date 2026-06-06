@@ -10,9 +10,7 @@
     "description": "summary"
   },
   "removeIndexFromSlug": true,
-  "publishContent": false,
   "bluesky": {
     "enabled": true
   }
 }
-
