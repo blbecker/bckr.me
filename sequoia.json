@@ -12,5 +12,8 @@
   "removeIndexFromSlug": true,
   "bluesky": {
     "enabled": true
+  },
+  "ui": {
+    "components": "site/assets/components"
   }
 }
