@@ -1,0 +1,18 @@
+{
+  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
+  "siteUrl": "https://bckr.me",
+  "contentDir": "./site/content/posts",
+  "publicDir": "./site/static",
+  "outputDir": "./site/public",
+  "publicationUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.publication/3mnljdbkemk24",
+  "pdsUrl": "https://bsky.tartarus.us",
+  "frontmatter": {
+    "description": "summary"
+  },
+  "removeIndexFromSlug": true,
+  "publishContent": false,
+  "bluesky": {
+    "enabled": true
+  }
+}
+
