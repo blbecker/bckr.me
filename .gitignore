@@ -1,5 +1,3 @@
 .aider*
 cdn
 .env.keys
-
-.sequoia-state.json
