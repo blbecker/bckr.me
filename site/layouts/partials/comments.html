@@ -1,0 +1,5 @@
+{{ if .Params.atUri }}
+{{ $js := resources.Get "components/sequoia-comments.js" | minify | fingerprint }}
+<sequoia-comments></sequoia-comments>
+<script type="module" src="{{ $js.RelPermalink }}"></script>
+{{ end }}

@@ -41,10 +41,11 @@ article:
   showTableOfContents: false
   showTaxonomies: false
   showWordCount: false
-  showComments: false
+  showComments: true
   sharingLinks:
     - mastodon
     - email
+    - bluesky
 list:
   showBreadcrumbs: false
   showSummary: true
