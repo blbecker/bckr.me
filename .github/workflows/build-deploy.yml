@@ -9,9 +9,69 @@ on:
       - main
 
 jobs:
+  sequoia-publish:
+    runs-on: ubuntu-latest
+    name: Sequoia Publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@v6
+        name: Install pnpm
+        with:
+          version: 10
+          cache: true
+
+      - name: Install sequoia
+        run: pnpm install -g sequoia-cli
+
+      - name: Install dotenvx
+        run: curl -sfS https://dotenvx.sh/install.sh | sh
+
+      - run: dotenvx run -- node build.js
+        env:
+          DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+
+      - name: Publish to ATProto
+        env:
+          DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            dotenvx run -- sequoia publish --dry-run
+          else 
+            dotenvx run -- sequoia publish 
+          fi
+
+      - name: Check for ATProto Changes
+        id: check_changes
+        run: |
+          if [[ -n "$(git diff --exit-code)" ]]; then
+            echo "Changes detected."
+            echo "::set-output name=has_changes::true"
+          else
+            echo "No changes detected."
+            echo "::set-output name=has_changes::false"
+          fi
+
+      - name: Commit and Push ATProto Changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          # configure user
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+          # stage any file changes to be committed
+          git add .
+
+          # make commit with staged changes
+          git commit -m 'files changed'
+
+          # push the commit back up to source GitHub repository
+          git push
   build:
     runs-on: ubuntu-latest
     name: Build
+    needs: [sequoia-publish]
     env:
       HUGO_VERSION: "0.136.2"
       HUGO_CACHEDIR: /tmp/hugo_cache
