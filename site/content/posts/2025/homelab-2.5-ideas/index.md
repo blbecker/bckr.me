@@ -12,6 +12,7 @@ categories:
 thumbnailAlt: The "this is fine" dog inside a burning server room.
 metaAlignment: left
 summary: Jotting down some ideas for improvements to make to my homelab / home network when I move to Puerto Rico.
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnphhhs24"
 ---
 
 As I've [mentioned elsewhere]( {{< ref "now#moving-to-puerto-rico" >}}), I'll be moving to Puerto Rico soon (3 weeks, at the time of this writing :smile:). As part of the move, I've taken down my server cluster and nas, and will be taking down the route/switch components shortly before we leave. There are some things that I've wanted to update or changes for a while, but either haven't prioritized or didn't want to incur the downtime. I'm going to be down anyway for the move and putting things back incrementally, so this is an opportunity to check off some of those other tasks. Below are some thoughts on things I'd like to consider changing in the new deployment.

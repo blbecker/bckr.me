@@ -1,2 +1,11 @@
 <link href="https://universeodon.com/@blbecker" rel="me" />
 <link href="https://webmention.io/bckr.me/webmention" rel="webmention" />
+<!-- atproto verification -->
+{{ if .Params.atUri }}
+<link rel="site.standard.document" href="{{ .Params.atUri }}" />
+{{ end }}
+<link
+  rel="site.standard.publication"
+  href="at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.publication/3mnljdbkemk24"
+/>
+

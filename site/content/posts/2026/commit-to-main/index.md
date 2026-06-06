@@ -8,6 +8,7 @@ tags:
 categories:
   - personal
 summary: Post more by reducing friction to deploy!
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnoymuc24"
 ---
 
 I disabled branch protection on the main branch of the [repo](https://github.com/blbecker/bckr.me) for this website. I had been doing PRs for posts, but the friction of getting something published (and "perfecting" something before publishing it) is an impediment to hitting "post". This year, I'd like to be more intentional about building in public, both on this website and the projects that I'm tinkering with. The internet was best when it was a collection of weird little sites, typos and all, and this is my attempt to recapture just a little bit of that.
