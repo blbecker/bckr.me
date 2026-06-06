@@ -1,39 +1,39 @@
 {
   "posts": {
     "site/content/posts/2026/commit-to-main/index.md": {
-      "contentHash": "294dea925bd38f9f7ed561894daa7955418b7f1c7ce7fe93751c45c49a74be55",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnoymuc24",
-      "lastPublished": "2026-06-06T01:43:26.749Z",
+      "contentHash": "854b7aa1d42b8e7ca97ad95641da0553b060bdb831a25073d77695a6954cd60b",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzkmrmc24",
+      "lastPublished": "2026-06-06T02:45:26.812Z",
       "slug": "2026/commit-to-main"
     },
     "site/content/posts/2025/updates/index.md": {
-      "contentHash": "423c9fa02b383b9d3987d7fdf5a237b5ea07bd3628dacbb9aeefaceb902c951f",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnpbba224",
-      "lastPublished": "2026-06-06T01:43:26.953Z",
+      "contentHash": "2fc3ac7d43fd4173bfbba3b032706f0c99a52031a254466a627b5db472f6ce65",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzkuves24",
+      "lastPublished": "2026-06-06T02:45:27.237Z",
       "slug": "2025/updates"
     },
     "site/content/posts/2025/homelab-2.5-ideas/index.md": {
-      "contentHash": "384ecfdbb845acf04617985f798e7b7a1c993f89c828127b64d1f211ac9710e4",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnphhhs24",
-      "lastPublished": "2026-06-06T01:43:27.158Z",
+      "contentHash": "9acafb72760b40fbf59a78a5084e7b6be0ac7f2890d4b536ca0030f7f788bbc7",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzl36kc24",
+      "lastPublished": "2026-06-06T02:45:27.565Z",
       "slug": "2025/homelab-2.5-ideas"
     },
     "site/content/posts/2023/new-radio-day/index.md": {
-      "contentHash": "2209a15eaa45c1926e4a8f8141312862af8b1131b8338d43dfd68949a2a7d767",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnpnoos24",
-      "lastPublished": "2026-06-06T01:43:27.362Z",
+      "contentHash": "f417e1c0bfa502482df9734e096ba22833bec72f4f170be2305b9d2a88768583",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlb3ys24",
+      "lastPublished": "2026-06-06T02:45:27.889Z",
       "slug": "2023/new-radio-day"
     },
     "site/content/posts/2023/fresh-paint/index.md": {
-      "contentHash": "0fb035eb7808d3b51a83a3415e8f79d70078b9f4ebfec1bf7af41622334302fd",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnptxuc24",
-      "lastPublished": "2026-06-06T01:43:27.567Z",
+      "contentHash": "616f4e52deaf0efe093126cf333317957a4531987fea9cb7a04e47643b3693af",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlglrs24",
+      "lastPublished": "2026-06-06T02:45:28.235Z",
       "slug": "2023/fresh-paint"
     },
     "site/content/posts/2020/authenticated-repositories/index.md": {
-      "contentHash": "16f5d804fae7adafaa1968972e6b9f67bcd5ea336dbc2952ae27746b446e7754",
-      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnq2mqs24",
-      "lastPublished": "2026-06-06T01:43:28.182Z",
+      "contentHash": "8216d7da1754e34c4ce584fc7f8d402212a66299ad2fc21deaecdf569ec9780f",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlm2lk24",
+      "lastPublished": "2026-06-06T02:45:28.547Z",
       "slug": "2020/authenticated-repositories"
     }
   },
