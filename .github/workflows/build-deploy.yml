@@ -42,10 +42,10 @@ jobs:
         run: |
           if [[ -n "$(git diff --exit-code)" ]]; then
             echo "Changes detected."
-            echo "has_changes=true" >> $GITHUB_STATE
+            echo "has_changes=true" >> $GITHUB_OUTPUT
           else
             echo "No changes detected."
-            echo "has_changes=false" >> $GITHUB_STATE
+            echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and Push ATProto Changes
@@ -59,10 +59,11 @@ jobs:
           git add .
 
           # make commit with staged changes
-          git commit -m 'files changed'
+          git commit -m 'chore(atproto): commit atproto publishing updates'
 
           # push the commit back up to source GitHub repository
           git push
+
   build:
     runs-on: ubuntu-latest
     name: Build
