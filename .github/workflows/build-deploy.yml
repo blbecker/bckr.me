@@ -27,18 +27,14 @@ jobs:
       - name: Install dotenvx
         run: curl -sfS https://dotenvx.sh/install.sh | sh
 
-      - run: dotenvx run -- node build.js
-        env:
-          DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
-
       - name: Publish to ATProto
         env:
           DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            dotenvx run -- sequoia publish --dry-run
+            dotenvx run -f .env -- sequoia publish --dry-run
           else 
-            dotenvx run -- sequoia publish 
+            dotenvx run -f .env -- sequoia publish 
           fi
 
       - name: Check for ATProto Changes
