@@ -16,7 +16,7 @@ metaAlignment: left
 summary: It's been a long time since this blog was updated. Quick updates and plans for the future!
 aliases:
   - posts/fresh-paint
-atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnptxuc24"
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlglrs24"
 ---
 
 # Reintroductions

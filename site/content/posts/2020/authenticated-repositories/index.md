@@ -20,7 +20,7 @@ summary: >-
   support this, but proper implementations are non-obvious.
 aliases:
   - /posts/authenticated-repositories
-atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnq2mqs24"
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlm2lk24"
 ---
 Although RPM and Debian repos are generally intended for distributing software to the public, there are times when a more private approach is desired. Whether for proprietary software or merely keeping "the internet" out of development spaces, let's take a look at how to secure linux package repositories in a way that is transparent to native tools.
 

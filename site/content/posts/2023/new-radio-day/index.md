@@ -17,7 +17,7 @@ metaAlignment: left
 summary: New radio day for KE8TDE and some thoughts on handset programming.
 aliases:
   - posts/new-radio-day
-atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnpnoos24"
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlb3ys24"
 ---
 
 # New Radio

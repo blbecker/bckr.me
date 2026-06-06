@@ -10,7 +10,7 @@ categories:
 thumbnailAlt:
 metaAlignment: left
 summary: Updates to my website and thoughts on what to do next.
-atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnljnpbba224"
+atUri: "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzkuves24"
 ---
 
 I've been a bit more active on my website lately, and I wanted to document a bit of what I've done and what I've been thinking about. Something about moving has me thinking more about documenting my experiences--especially in photographs--and sharing that with others (Rachel has said something similar about her website). I hope to spend more time doing things I enjoy, especially outside, and photography is something that Rachel and I enjoy doing together. This change in our lives is one of simplification and decluttering; perhaps I can simplify my engagement with the internet in a similar way.
