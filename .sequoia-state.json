@@ -3,37 +3,37 @@
     "site/content/posts/2026/commit-to-main/index.md": {
       "contentHash": "854b7aa1d42b8e7ca97ad95641da0553b060bdb831a25073d77695a6954cd60b",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzkmrmc24",
-      "lastPublished": "2026-06-06T02:45:26.812Z",
+      "lastPublished": "2026-06-06T03:06:06.484Z",
       "slug": "2026/commit-to-main"
     },
     "site/content/posts/2025/updates/index.md": {
       "contentHash": "2fc3ac7d43fd4173bfbba3b032706f0c99a52031a254466a627b5db472f6ce65",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzkuves24",
-      "lastPublished": "2026-06-06T02:45:27.237Z",
+      "lastPublished": "2026-06-06T03:06:06.776Z",
       "slug": "2025/updates"
     },
     "site/content/posts/2025/homelab-2.5-ideas/index.md": {
       "contentHash": "9acafb72760b40fbf59a78a5084e7b6be0ac7f2890d4b536ca0030f7f788bbc7",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzl36kc24",
-      "lastPublished": "2026-06-06T02:45:27.565Z",
+      "lastPublished": "2026-06-06T03:06:07.083Z",
       "slug": "2025/homelab-2.5-ideas"
     },
     "site/content/posts/2023/new-radio-day/index.md": {
       "contentHash": "f417e1c0bfa502482df9734e096ba22833bec72f4f170be2305b9d2a88768583",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlb3ys24",
-      "lastPublished": "2026-06-06T02:45:27.889Z",
+      "lastPublished": "2026-06-06T03:06:07.333Z",
       "slug": "2023/new-radio-day"
     },
     "site/content/posts/2023/fresh-paint/index.md": {
       "contentHash": "616f4e52deaf0efe093126cf333317957a4531987fea9cb7a04e47643b3693af",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlglrs24",
-      "lastPublished": "2026-06-06T02:45:28.235Z",
+      "lastPublished": "2026-06-06T03:06:07.602Z",
       "slug": "2023/fresh-paint"
     },
     "site/content/posts/2020/authenticated-repositories/index.md": {
       "contentHash": "8216d7da1754e34c4ce584fc7f8d402212a66299ad2fc21deaecdf569ec9780f",
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlm2lk24",
-      "lastPublished": "2026-06-06T02:45:28.547Z",
+      "lastPublished": "2026-06-06T03:06:07.901Z",
       "slug": "2020/authenticated-repositories"
     }
   },
