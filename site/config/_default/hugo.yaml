@@ -30,6 +30,7 @@ outputs:
 params:
   icons:
     throw_on_error: true
+  standardSitePublicationURI: at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.publication/3mnljdbkemk24
 
 # Setup hugo mods
 module:
