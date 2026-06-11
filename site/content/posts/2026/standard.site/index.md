@@ -9,13 +9,35 @@ summary: CI/CD based standard.site publishing with sequoia, hugo, and github act
 draft: true
 ---
 
+## Standard.site
+
+[Standard.site](https://standard.site/) is a set of lexicons for describing long-form publications on ATProto. The standard provides schemas for describing publications (websites, blogs, etc), documents (posts or pages), subscription (following), and recommending (basically a like). The standard also describes a mechanism for verification, based on a `.well-known` endpoint and html `<link>`s. Publications are verified via .well-known and may optionally include html links for discovery hints. Documents are verified by including an html link to the atProto URI for that document.
+
 ## Sequoia
 
 [Sequoia](https://sequoia.pub/blog/introducing-sequoia) is a CLI tool for publishing a self-hosted blog to atproto. It has first class support for static site generators and a great fit for this site. Setup is simple following the [quickstart guide](https://sequoia.pub/quickstart).
 
+```bash
+npm i -g sequoia-cli
+sequoia auth # Use an app password
+sequoia init # Follow the prompts
+```
+
+### Publishing
+
+Sequoia provides a [`publish`](https://sequoia.pub/cli-reference#publish) command to parse markdown posts and generate atProto records corresponding to those resources. Publishing also injects the URI of the atProto record into the frontmatter of the source markdown file. In CI/CD, the publish step runs _before_ the hugo build so that these variables are populated before rendering.
+
 ## Hugo
 
-Standard.site publications include some metadata to establish the connection to the atproto record for the publication and documents. This metadata is stored in rel links in the head of the html document. When publishing, sequoia injects the atproto record uri into an `atUri` key in the markdown frontmatter. We can consume this parameter to reference the atUri for each post automatically. The Congo theme I use for this site supports an `extend-head.html` to add elements to the `<head>` globally. We'll conditionally inject a site.standard.document link, if an atUri param is specified, and always include the site.standard.publication link. This establishes the trust relationship between the atproto-published standard.site objects and the website.
+### Config
+
+`sequoia init` will create a new publication and emit a publication URI. This value is also contained in `sequoia.json`. This value will be included in our generated pages for verfication, so I store it in site parameter for reference in a partial. The atProto URIs for posts are made available via the frontmatter injected by `sequoia publish`.
+
+### Verification
+
+Verification of publications is done via a `.well-known` endpoint. I create a file at `site/static/` containing my publication URI to create the endpoint.
+
+Verification of the documents requires including an html `<Link>` containing the atProto uri of the `site.standard.document` object. The [theme](https://jpanther.github.io/congo/) for this site supports an `extend-head.html` partial to add elements to the `<head>` globally. I conditionally inject a site.standard.document link, if an atUri param is specified, and always include the site.standard.publication link. There are some pages on my site that I don't publish documents for (currently, anyway), such as slash pages, and this conditional insertion handles this transparently.
 
 ```html
 <!-- atproto verification -->
@@ -24,15 +46,15 @@ Standard.site publications include some metadata to establish the connection to 
 {{ end }}
 <link
   rel="site.standard.publication"
-  href="at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.publication/3mnljdbkemk24"
+  href="{{ safeURL .Site.Params.standardSitePublicationURI }}"
 />
 ```
 
-## Secrets
-
-To simplfy CI and future extensions, I'm using dotenvx to to encrypt a `.env` file in the repo to provide sequoia its config. This env file stores my DID, sequoia app password, and pds url (seemingly required for self-hosted PDSs).
-
 ## Github Actions
+
+### Secrets
+
+Sequoia requires an app password to function, requiring secrets management. I use [dotenvx](https://dotenvx.com/) in this and other projects to encrypt secrets and store them with the repo in a platform agnostic way. I store an encrypted [`.env`](https://github.com/blbecker/bckr.me/blob/main/.env) file that stores my DID, sequoia app password, and pds url (seemingly required for self-hosted PDSs). Operations are simple and I only need to provide a private key to dotenvx (via a github secret) to decrypt the remaining secrets. Any new secrets for the project can be added to the `.env` file and made available everywhere the project builds.
 
 The actions workflow performs the publication using dotenvx to populate the encrypted environment variables.
 
@@ -47,6 +69,8 @@ The actions workflow performs the publication using dotenvx to populate the encr
       dotenvx run -f .env -- sequoia publish 
     fi
 ```
+
+### Post-publish commit
 
 When publishing a post, sequoia writes the atUri back to the frontmatter of the markdown. In order to preserve these values, we commit them back to the repo.
 
@@ -79,7 +103,11 @@ When publishing a post, sequoia writes the atUri back to the frontmatter of the 
     git push
 ```
 
+## Confirmation
+
+The atProto records published by sequoia can be explored with [pdsls.dev](https://pdsls.dev). [site-validator.flu.dev](https://site-validator.fly.dev/) can be used to validate the verification implementation for documents and publications. The real confirmation test will come shortly after I publish this, though, when I publish my first bluesky post referencing my standard.site documents :sweat_smile:.
+
 ## Links
 
-- [Full Implementation](https://github.com/blbecker/bckr.me/tree/402f68e7395a656a2c259bce374f2e0df3cda0fa)
+- [CI/CD Workflow](https://github.com/blbecker/bckr.me/blob/402f68e7395a656a2c259bce374f2e0df3cda0fa/.github/workflows/build-deploy.yml)
 - [Standard.site Validator](https://site-validator.fly.dev/)
