@@ -1,11 +1,11 @@
 ---
-title: "ATproto Publishing"
+title: "Implementing standard.site"
 date: 2026-06-06T04:16:36Z
 tags:
   - blog
 categories:
   - tech
-summary: CI/CD based atproto publishing with sequoia.
+summary: CI/CD based standard.site publishing with sequoia, hugo, and github actions.
 draft: true
 ---
 
@@ -15,9 +15,9 @@ draft: true
 
 ## Hugo
 
-Standard.site publications include some metadata to establish the connection to the atproto record for the publication and documents. This metadata is stored in rel links in the head of the html document. When publishing, sequoia injects the atproto record uri into an `atUri` key in the markdown frontmatter. We can consume this parameter to reference the atUri for each post automatically.
+Standard.site publications include some metadata to establish the connection to the atproto record for the publication and documents. This metadata is stored in rel links in the head of the html document. When publishing, sequoia injects the atproto record uri into an `atUri` key in the markdown frontmatter. We can consume this parameter to reference the atUri for each post automatically. The Congo theme I use for this site supports an `extend-head.html` to add elements to the `<head>` globally. We'll conditionally inject a site.standard.document link, if an atUri param is specified, and always include the site.standard.publication link. This establishes the trust relationship between the atproto-published standard.site objects and the website.
 
-```html 
+```html
 <!-- atproto verification -->
 {{ if .Params.atUri }}
 <link rel="site.standard.document" href="{{ safeURL .Params.atUri }}" />
@@ -26,12 +26,11 @@ Standard.site publications include some metadata to establish the connection to 
   rel="site.standard.publication"
   href="at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.publication/3mnljdbkemk24"
 />
-
 ```
 
 ## Secrets
 
-To simply CI and future extensions, I'm using dotenvx to to encrypt a `.env` file in the repo to provide sequoia its config. This env file stores my DID, sequoia app password, and pds url (seemingly required for self-hosted PDSs).
+To simplfy CI and future extensions, I'm using dotenvx to to encrypt a `.env` file in the repo to provide sequoia its config. This env file stores my DID, sequoia app password, and pds url (seemingly required for self-hosted PDSs).
 
 ## Github Actions
 
@@ -82,5 +81,5 @@ When publishing a post, sequoia writes the atUri back to the frontmatter of the 
 
 ## Links
 
-- [PR Introducing `sequoia`](https://github.com/blbecker/bckr.me/pull/85)
-- [Final State of CI](https://github.com/blbecker/bckr.me/blob/9a50bedf4ae00237a79c09833c3b4a2fd4e7fbcd/.github/workflows/build-deploy.yml)
+- [Full Implementation](https://github.com/blbecker/bckr.me/tree/402f68e7395a656a2c259bce374f2e0df3cda0fa)
+- [Standard.site Validator](https://site-validator.fly.dev/)
