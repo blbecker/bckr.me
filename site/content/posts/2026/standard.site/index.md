@@ -134,5 +134,5 @@ I really like this tooling. Sequoia fits really well into the static site CI/CD 
 
 ## Links
 
-- [CI/CD Workflow](https://github.com/blbecker/bckr.me/blob/402f68e7395a656a2c259bce374f2e0df3cda0fa/.github/workflows/build-deploy.yml)
+- [CI/CD Workflow](https://github.com/blbecker/bckr.me/blob/f32aa3796901c0da0389467689d61f01afc9f41d/.github/workflows/build-deploy.yml)
 - [Standard.site Validator](https://site-validator.fly.dev/)
