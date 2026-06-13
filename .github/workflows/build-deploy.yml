@@ -65,6 +65,14 @@ jobs:
           # push the commit back up to source GitHub repository
           git push
 
+      - name: Upload updated content
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-content
+          path: |
+            site/content
+
   build:
     runs-on: ubuntu-latest
     name: Build
@@ -77,6 +85,13 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: recursive
+
+      - name: Download updated content
+        if: github.event_name != 'pull_request'
+        uses: actions/download-artifact@v8
+        with:
+          name: site-content
+          path: site/content
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@75d2e84710de30f6ff7268e08f310b60ef14033f # v3
