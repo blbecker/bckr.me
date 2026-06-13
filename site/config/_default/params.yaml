@@ -42,10 +42,7 @@ article:
   showTaxonomies: false
   showWordCount: false
   showComments: true
-  sharingLinks:
-    - mastodon
-    - email
-    - bluesky
+  sharingLinks: false
 list:
   showBreadcrumbs: false
   showSummary: true
