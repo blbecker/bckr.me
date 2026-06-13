@@ -35,6 +35,16 @@
       "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mnlmzlm2lk24",
       "lastPublished": "2026-06-06T03:06:07.901Z",
       "slug": "2020/authenticated-repositories"
+    },
+    "site/content/posts/2026/standard.site/index.md": {
+      "contentHash": "95ba206cce07db5b1920b8160e95b37e22e786a00376b892228728fd26f6666a",
+      "atUri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/site.standard.document/3mo5bce5o2c24",
+      "lastPublished": "2026-06-13T03:01:52.608Z",
+      "slug": "2026/standard.site",
+      "bskyPostRef": {
+        "uri": "at://did:plc:u6nttbpfrjvdgyzjj6c7fih7/app.bsky.feed.post/3mo5bcedmi224",
+        "cid": "bafyreigz4qu5kzypbng3tdnichrzmazqqjvaqnkq6uktz2gfu2ly4oi3de"
+      }
     }
   },
   "publication": {
