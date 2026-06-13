@@ -81,7 +81,7 @@
             {{ . | emojify | markdownify }}
           {{- else }}
             🄯 {{ now.Format "2006" }} Copyleft All Rites Reversed {{ "• License [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)" | markdownify }} <br>
-            {{ "[Fork this blog](https://github.com/blbecker/bckr.me)" | markdownify }} | main{{ if .GitInfo.AbbreviatedHash}}:{{ .GitInfo.AbbreviatedHash}}{{ end }}
+            {{ "[Fork this blog](https://github.com/blbecker/bckr.me)" | markdownify }} | main{{ with .GitInfo }}:{{ .AbbreviatedHash }}{{ end }}
           
           {{- end }}
         </p>

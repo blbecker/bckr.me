@@ -78,7 +78,7 @@ jobs:
     name: Build
     needs: [sequoia-publish]
     env:
-      HUGO_VERSION: "0.136.2"
+      HUGO_VERSION: "0.163.1"
       HUGO_CACHEDIR: /tmp/hugo_cache
     steps:
       - name: Checkout
