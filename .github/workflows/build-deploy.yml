@@ -140,7 +140,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     env:
-      WRANGLER_VERSION: "3.78.10"
+      WRANGLER_VERSION: "4"
     needs: [build, gitleaks]
     if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
     steps:
@@ -148,16 +148,6 @@ jobs:
         with:
           name: hugo-build
           path: public
-
-      - name: Cache wrangler install
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
-        with:
-          path: |
-            ~/.npm
-            ./node_modules
-          key: ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}-${{github.head_ref || github.ref_name}}
-          restore-keys: |
-            ${{ runner.os }}-wrangler-${{ env.WRANGLER_VERSION }}
 
       - name: Deploy
         id: deploy
