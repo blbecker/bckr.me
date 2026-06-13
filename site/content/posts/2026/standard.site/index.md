@@ -6,7 +6,6 @@ tags:
 categories:
   - tech
 summary: CI/CD based standard.site publishing with sequoia, hugo, and github actions.
-draft: true
 ---
 
 After [standard.site](https://standard.site/) was released, I wanted to see how well it fit into a statically generated blog published via CI/CD. I've experimented with [indieweb](https://indieweb.org/) solutions, like [microformats](https://microformats.org/) and [webmentions](https://webmention.net/), before and was excited to try another variation on the concept. I was impressed with the simplicity of the integration and robustness of the tooling. With a couple of additions to my templates and a CI stage, I'm able to syndicate posts to ATProto and expose metadata that enables discovery and interaction.
