@@ -1,0 +1,19 @@
+{
+  "concurrency": 10,
+  "recurse": true,
+  "verbosity": "WARNING",
+  "timeout": 0,
+  "markdown": true,
+  "checkCss": true,
+  "checkFragments": false,
+  "cleanUrls": true,
+  "requireHttps": "true",
+  "allowInsecureCerts": false,
+  "userAgent": "Mozilla/4.0 (compatible; MSIE 6.0; MSIE 5.5; Windows NT 5.1)",
+  "statusCodes": {
+    "200": "ok",
+    "404": "warn",
+    "4xx": "warn",
+    "5xx": "warn"
+  }
+}
