@@ -9,6 +9,9 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: deploy-${{ github.ref }}
+
 jobs:
   sequoia-publish:
     runs-on: ubuntu-latest
