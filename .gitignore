@@ -1,3 +1,6 @@
 .aider*
 cdn
 .env.keys
+.lycheecache
+cookie-jar
+lychee-report.md
