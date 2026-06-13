@@ -2,7 +2,7 @@ name: bckr
 
 services:
   hugo:
-    image: hugomods/hugo:go-git-0.163.1
+    image: hugomods/hugo:go-git-0.163.1@sha256:d8f57e4dff49f41fa7e0a605eeb59f08374bd4e2075d0f8da6b7b0aba52a76ef
     command: server -D
     volumes:
       - .:/src
