@@ -37,7 +37,7 @@ module:
   proxy: direct
   hugoVersion:
     extended: true
-    min: 0.136.2
+    min: 0.163.0
   imports:
     - path: github.com/jpanther/congo/v2
       disable: false
