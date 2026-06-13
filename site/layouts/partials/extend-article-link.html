@@ -1,0 +1,5 @@
+{{ if gt .PublishDate (now.AddDate 0 0 -14) }}
+{{ .Page.RenderString "{{< badge >}}Recent!{{< /badge >}}" }}
+{{ end }}
+
+
