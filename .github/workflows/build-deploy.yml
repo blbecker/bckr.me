@@ -40,7 +40,7 @@ jobs:
       - name: Check for ATProto Changes
         id: check_changes
         run: |
-          if [[ -n "$(git diff --exit-code)" ]]; then
+          if ! git diff --quiet; then
             echo "Changes detected."
             echo "has_changes=true" >> $GITHUB_OUTPUT
           else
