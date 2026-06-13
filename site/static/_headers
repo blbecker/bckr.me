@@ -8,7 +8,7 @@
   Link: https://webmention.io/bckr.me/webmention; rel="webmention"
   Cross-Origin-Resource-Policy: same-origin
   Strict-Transport-Security: max-age=31536000
-  Content-Security-Policy: default-src 'self' *.bckr.me; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' *.bckr.me plc.directory bsky.tartarus.us public.api.bsky.app;
+  Content-Security-Policy: default-src 'self' *.bckr.me; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' *.bckr.me plc.directory bsky.tartarus.us public.api.bsky.app; image-src 'self' *.bckr.me cdn.bsky.app
 
 /.well-known/matrix/*
   Content-Type: application/json
