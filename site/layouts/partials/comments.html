@@ -7,11 +7,17 @@
 fingerprint }}
 <div class="p-1 flex justify-between items-center">
   <div class="w-24">
-    <sequoia-recommend></sequoia-recommend>
+    <sequoia-recommend
+      button-type="star"
+    ></sequoia-recommend>
   </div>
 
   <div class="w-14">
-    <sequoia-subscribe button-type="atmosphere"></sequoia-subscribe>
+    <sequoia-subscribe 
+      button-type="sequoia"
+      label="Follow this publication"
+      unsubscribe-label="Stop following">
+    ></sequoia-subscribe>
   </div>
 </div>
 <script type="module" src="{{ $subscribeJS.RelPermalink }}"></script>
