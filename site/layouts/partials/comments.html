@@ -1,5 +1,19 @@
-{{ if .Params.atUri }}
-{{ $js := resources.Get "components/sequoia-comments.js" | minify | fingerprint }}
+{{ if .Params.atUri }} {{ $commentsJS := resources.Get
+"components/sequoia-comments.js" | minify | fingerprint }}
 <sequoia-comments></sequoia-comments>
-<script type="module" src="{{ $js.RelPermalink }}"></script>
+<script type="module" src="{{ $commentsJS.RelPermalink }}"></script>
+
+{{ $subscribeJS := resources.Get "components/sequoia-subscribe.js" | minify |
+fingerprint }}
+<div class="p-1 flex justify-between items-center">
+  <div class="w-24">
+    <sequoia-recommend></sequoia-recommend>
+  </div>
+
+  <div class="w-14">
+    <sequoia-subscribe button-type="atmosphere"></sequoia-subscribe>
+  </div>
+</div>
+<script type="module" src="{{ $subscribeJS.RelPermalink }}"></script>
+
 {{ end }}
