@@ -29,8 +29,12 @@ Large media is stored on Backblaze B2 and served via Cloudflare. Backblaze and C
 
 ## IndieWeb
 
-This website is configured for Indieweb functionality. Webmentions are received via [webmention.io](https://webmention.io/). If I continue to leverage webmentions long-terrm, I may migrate my receiver to my [homelab]( {{< ref "now#Homelab" >}} ) or look at a serverless solution using Cloudflare Workers and some kind of cheap storage.
+This website is configured for Indieweb functionality. Webmentions are received via [webmention.io](https://webmention.io/). If I continue to leverage webmentions long-term, I may migrate my receiver to my [homelab]( {{< ref "now#Homelab" >}} ) or look at a serverless solution using Cloudflare Workers and some kind of cheap storage.
 
 I haven't wired up webmention sending yet, but I plan on utilizing [timmarinin/Webmention](https://github.com/timmarinin/webmention) or [willnorris/webmention](https://github.com/willnorris/webmention) as a Github Actions step after deployment to send webmentions.
 
 My current theme doesn't include microformats markup out of the box, so I've had to override some layouts. So far, this hasn't been too intrusive so maintaining compatibility with upstream shouldn't be too difficult. I've added shortcodes for some mf2 markup to simplify using them inside content.
+
+## ATProto
+
+This website publishes [standard.site](/posts/2026/standard.site/) lexicons, using [`sequoia`](https://sequoia.pub) to ATProto as part of the CI/CD process. This makes my content discoverable on the Atmosphere, including Bluesky. This functionality also powers comments, subscriptions, and recommendations for my posts.

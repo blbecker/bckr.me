@@ -15,6 +15,8 @@ params:
     links:
       - email: "mailto:blog@mail.bckr.me"
       - github: "https://github.com/blbecker"
-      - linkedin: "https://www.linkedin.com/in/beckerbenjamin/"
-      - mastodon: "https://mstdn.social/@bnjmn"
       - bluesky: "https://bsky.app/profile/benjamin.bckr.me"
+      - matrix: "https://matrix.to/#/@benjamin:bckr.me"
+      - retroachievements: "https://retroachievements.org/user/illiteratidomine"
+      - mastodon: "https://mstdn.social/@bnjmn"
+      - linkedin: "https://www.linkedin.com/in/beckerbenjamin/"

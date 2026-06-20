@@ -3,3 +3,6 @@
 {{ end }}
 
 
+{{ if gt .Lastmod (now.AddDate 0 0 -14) }}
+{{ .Page.RenderString "{{< badge >}}Updated!{{< /badge >}}" }}
+{{ end }}

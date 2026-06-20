@@ -1,7 +1,6 @@
 ---
 title: "Hello"
-date: 2024-10-24T09:58:29-04:00
-draft: true
+date: 2026-06-19T09:58:29-04:00
 url: hello
 menus: Slashes
 weight: 20
@@ -9,9 +8,14 @@ summary: A hello page describes the ways that I prefer to keep in touch.
 showAuthor: false
 sharingLinks: false
 invertPagination: true
+aliases:
+  - /verify
 ---
 
-A [Hello](https://alastairjohnston.com/introducing-hello-pages/) page describes the ways I prefer to keep in touch. This is one my [Slash Pages]( {{< ref "Slashes" >}} )
+[Hello](https://alastairjohnston.com/introducing-hello-pages/), I'm Benjamin Becker.
+
+Here are my preferred ways of keeping in touch.
 
 - [Email](mailto:blog@mail.bckr.me) is my preferred way to keep in touch.
-- I'm also active on [Mastodon](https://mstdn.social/@bnjmn) and [Bluesky](https://bsky.app/profile/bckr.me).
+- I'm also active on [Bluesky](https://bsky.app/profile/bckr.me).
+- I do not have accounts on Facebook, Instagram, Threads, or Twitter.
