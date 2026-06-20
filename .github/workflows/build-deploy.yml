@@ -101,15 +101,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Download updated content
-        if: >
-          github.event_name != 'pull_request' &&
-          needs.sequoia-publish.outputs.has_changes == 'true'
-        uses: actions/download-artifact@v8
-        with:
-          name: site-content
-          path: site/content
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
         with:

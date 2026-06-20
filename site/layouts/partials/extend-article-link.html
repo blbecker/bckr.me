@@ -1,8 +1,5 @@
 {{ if gt .PublishDate (now.AddDate 0 0 -14) }}
 {{ .Page.RenderString "{{< badge >}}New!{{< /badge >}}" }}
-{{ end }}
-
-
-{{ if gt .Lastmod (now.AddDate 0 0 -14) }}
+{{ else if gt .Lastmod (now.AddDate 0 0 -14) }}
 {{ .Page.RenderString "{{< badge >}}Updated!{{< /badge >}}" }}
 {{ end }}

@@ -17,6 +17,7 @@ enableGitInfo: true
 frontmatter:
   lastmod:
     - lastmod
+    - ":git"
     - ":default"
 
 # Congo requires these
