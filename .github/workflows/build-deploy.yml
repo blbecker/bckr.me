@@ -18,6 +18,8 @@ jobs:
   sequoia-publish:
     runs-on: ubuntu-latest
     name: Sequoia Publish
+    outputs:
+      has_changes: ${{ steps.check_changes.outputs.has_changes }}
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
@@ -70,18 +72,26 @@ jobs:
           # push the commit back up to source GitHub repository
           git push
 
-      - name: Upload updated content
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v7
+      # In order to catch atUri changes (based on has_changes), we trigger a new run.
+      # The build step is gated on has changes, so this run will end.
+      - name: Trigger new run
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: actions/github-script@v8
         with:
-          name: site-content
-          path: |
-            site/content
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: context.workflow,
+              ref: context.ref
+            })
 
   build:
     runs-on: ubuntu-latest
     name: Build
     needs: [sequoia-publish]
+    if: >
+      needs.sequoia-publish.outputs.content_changed != 'true'
     env:
       HUGO_VERSION: "0.163.1"
       HUGO_CACHEDIR: /tmp/hugo_cache
@@ -92,7 +102,9 @@ jobs:
           submodules: recursive
 
       - name: Download updated content
-        if: github.event_name != 'pull_request'
+        if: >
+          github.event_name != 'pull_request' &&
+          needs.sequoia-publish.outputs.has_changes == 'true'
         uses: actions/download-artifact@v8
         with:
           name: site-content
