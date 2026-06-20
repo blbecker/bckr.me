@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6
         name: Install pnpm
         with:
           version: 10
@@ -76,7 +76,7 @@ jobs:
       # The build step is gated on has changes, so this run will end.
       - name: Trigger new run
         if: steps.check_changes.outputs.has_changes == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           script: |
             await github.rest.actions.createWorkflowDispatch({

@@ -2,12 +2,12 @@ name: bckr
 
 services:
   change-ownership:
-    image: alpine
+    image: alpine@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
     command: chown -R 1000:1000 /hugo_cache
     volumes:
       - hugo_cache:/hugo_cache
   hugo:
-    image: hugomods/hugo:go-git-0.163.1
+    image: hugomods/hugo:go-git-0.163.1@sha256:d8f57e4dff49f41fa7e0a605eeb59f08374bd4e2075d0f8da6b7b0aba52a76ef
     command: server -D
     volumes:
       - .:/src
